@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketing VIP® — Propuesta Web CX & Mystery Shopping</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);
+  color: #e0e0e0;
+  min-height: 100vh;
+  line-height: 1.7;
+}
+.container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+header {
+  text-align: center;
+  padding: 60px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 50px;
+}
+.logo {
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: #888;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 15px;
+}
+h1 span { color: #51dd7d; }
+.subtitle { color: #888; font-size: 1.1rem; }
+.glass-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 30px;
+  margin-bottom: 30px;
+  backdrop-filter: blur(10px);
+}
+h2 {
+  font-size: 1.1rem;
+  color: #51dd7d;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+h3 {
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.icon { font-size: 1.2rem; }
+ul { list-style: none; }
+ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+ul li:last-child { border-bottom: none; }
+ul li::before {
+  content: "✓";
+  color: #51dd7d;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+.highlight { color: #51dd7d; font-weight: 600; }
+.pricing-card {
+  background: linear-gradient(135deg, rgba(81,221,125,0.1), rgba(81,221,125,0.02));
+  border: 1px solid rgba(81,221,125,0.3);
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+}
+.price-label { color: #888; font-size: 0.9rem; margin-bottom: 5px; }
+.price {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+}
+.currency { font-size: 1.5rem; color: #51dd7d; }
+.price-note { color: #888; font-size: 0.85rem; margin-top: 10px; }
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+.timeline-item {
+  flex: 1;
+  min-width: 150px;
+  text-align: center;
+  padding: 20px;
+  background: rgba(255,255,255,0.02);
+  border-radius: 10px;
+}
+.timeline-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #51dd7d;
+}
+.timeline-label { color: #888; font-size: 0.85rem; }
+footer {
+  text-align: center;
+  padding: 40px 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 50px;
+}
+footer p { color: #666; font-size: 0.85rem; }
+footer a { color: #51dd7d; text-decoration: none; }
+@media (max-width: 600px) {
+  h1 { font-size: 1.8rem; }
+  .price { font-size: 2.2rem; }
+  .glass-card { padding: 20px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="logo">Marketing VIP®</div>
+    <h1>Propuesta de Desarrollo Web<br><span>Customer Experience & Mystery Shopping</span></h1>
+    <p class="subtitle">Sitio corporativo profesional · SEO optimizado · Gestión de contenidos</p>
+  </header>
+
+  <div class="glass-card">
+    <h2><span class="icon">📋</span> RESUMEN DEL PROYECTO</h2>
+    <p style="color:#ccc; margin-bottom:20px;">Desarrollo de sitio web profesional y moderno para empresa especializada en Customer Experience (CX), Mystery Shopping y Mystery Digital.</p>
+    <ul>
+      <li>Diseño responsive y moderno que refleje profesionalidad e innovación</li>
+      <li>Arquitectura optimizada para SEO y velocidad de carga</li>
+      <li>Secciones detalladas de servicios: CX, Mystery Shopping, Mystery Digital</li>
+      <li>Portafolio de casos de éxito y testimonios</li>
+      <li>Formulario de contacto inteligente</li>
+      <li>Blog integrado para contenido del sector</li>
+      <li>CMS intuitivo para actualizaciones futuras</li>
+    </ul>
+  </div>
+
+  <div class="glass-card" style="border-left: 4px solid #51dd7d; margin-bottom: 30px;">
+    <h3><span class="icon">⚡</span> PROPUESTA A — WordPress Starter</h3>
+    <p style="color:#888; margin-bottom:20px;">Sitio profesional sobre plantilla premium personalizada</p>
+    <ul>
+      <li><span class="highlight">Hasta 6 páginas:</span> Home, Servicios (CX, Mystery Shopping, Mystery Digital), Nosotros, Contacto</li>
+      <li>Diseño responsive adaptado a tu marca</li>
+      <li>Formulario de contacto con notificaciones</li>
+      <li>Optimización SEO básica (meta tags, sitemap, velocidad)</li>
+      <li>Integración Google Analytics</li>
+      <li>SSL y seguridad básica</li>
+      <li>CMS WordPress fácil de gestionar</li>
+      <li>15 días de soporte post-lanzamiento</li>
+    </ul>
+    <div class="pricing-card" style="margin: 25px 0;">
+      <div class="price-label">Inversión</div>
+      <div class="price"><span class="currency">USD</span> 597</div>
+      <div class="price-note">Desarrollo completo + 15 días de soporte</div>
+    </div>
+    <h4 style="margin-top:20px; color:#fff;">Forma de Pago:</h4>
+    <ul>
+      <li><span class="highlight">50%</span> al iniciar — USD $298.50</li>
+      <li><span class="highlight">50%</span> al finalizar — USD $298.50</li>
+    </ul>
+  </div>
+
+  <div class="glass-card" style="border-left: 4px solid #f59e0b;">
+    <h3><span class="icon">🚀</span> PROPUESTA B — WordPress Pro + Blog</h3>
+    <p style="color:#888; margin-bottom:20px;">Sitio completo con diseño UX personalizado, blog y más funcionalidades</p>
+    <ul>
+      <li><span class="highlight">Hasta 10 páginas:</span> Home, 3 páginas de servicios detalladas, Nosotros, Casos de éxito, Blog, Contacto, FAQ, Políticas</li>
+      <li>Diseño UX/UI personalizado en Figma + desarrollo</li>
+      <li>Página de cada servicio con estructura de venta</li>
+      <li>Sección de casos de éxito / portafolio con filtros</li>
+      <li>Blog completo con categorías y búsqueda</li>
+      <li>Formulario inteligente con campos condicionales</li>
+      <li>Optimización SEO avanzada + Schema markup</li>
+      <li>Integración CRM / email marketing (Mailchimp, HubSpot)</li>
+      <li>Chat widget o WhatsApp Business</li>
+      <li>Core Web Vitals optimizados</li>
+      <li>30 días de soporte post-lanzamiento</li>
+    </ul>
+    <div class="pricing-card" style="margin: 25px 0; background: linear-gradient(135deg, rgba(245,158,11,0.1), rgba(245,158,11,0.02)); border-color: rgba(245,158,11,0.3);">
+      <div class="price-label">Inversión</div>
+      <div class="price"><span class="currency">USD</span> 997</div>
+      <div class="price-note">Diseño Figma + Desarrollo WordPress + 30 días de soporte</div>
+    </div>
+    <h4 style="margin-top:20px; color:#fff;">Forma de Pago:</h4>
+    <ul>
+      <li><span class="highlight">30%</span> al iniciar — USD $299</li>
+      <li><span class="highlight">30%</span> al aprobar diseño — USD $299</li>
+      <li><span class="highlight">40%</span> al finalizar desarrollo — USD $399</li>
+    </ul>
+  </div>
+
+  <div class="glass-card">
+    <h2><span class="icon">⏱️</span> TIEMPOS DE ENTREGA</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-number">2-3</div>
+        <div class="timeline-label">Semanas<br>Propuesta A</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-number">4-5</div>
+        <div class="timeline-label">Semanas<br>Propuesta B</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="glass-card">
+    <h2><span class="icon">✨</span> ¿QUÉ INCLUYE CADA PROPUESTA?</h2>
+    <table style="width:100%; border-collapse:collapse; margin-top:15px;">
+      <thead>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+          <th style="text-align:left; padding:12px 0; color:#888;">Característica</th>
+          <th style="text-align:center; padding:12px; color:#51dd7d;">A</th>
+          <th style="text-align:center; padding:12px; color:#f59e0b;">B</th>
+        </tr>
+      </thead>
+      <tbody style="color:#ccc;">
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+          <td style="padding:12px 0;">Diseño UX/UI en Figma</td>
+          <td style="text-align:center;">—</td>
+          <td style="text-align:center;">✓</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+          <td style="padding:12px 0;">Páginas incluidas</td>
+          <td style="text-align:center;">6</td>
+          <td style="text-align:center;">10</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+          <td style="padding:12px 0;">Blog integrado</td>
+          <td style="text-align:center;">—</td>
+          <td style="text-align:center;">✓</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+          <td style="padding:12px 0;">Casos de éxito / Portafolio</td>
+          <td style="text-align:center;">Básico</td>
+          <td style="text-align:center;">Con filtros</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+          <td style="padding:12px 0;">SEO Optimización</td>
+          <td style="text-align:center;">Básica</td>
+          <td style="text-align:center;">Avanzada + Schema</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+          <td style="padding:12px 0;">Integración CRM/Email</td>
+          <td style="text-align:center;">—</td>
+          <td style="text-align:center;">✓</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+          <td style="padding:12px 0;">Chat / WhatsApp</td>
+          <td style="text-align:center;">—</td>
+          <td style="text-align:center;">✓</td>
+        </tr>
+        <tr>
+          <td style="padding:12px 0;">Soporte post-lanzamiento</td>
+          <td style="text-align:center;">15 días</td>
+          <td style="text-align:center;">30 días</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="glass-card">
+    <h2><span class="icon">📌</span> NOTAS IMPORTANTES</h2>
+    <ul>
+      <li>Los precios <span class="highlight">no incluyen</span> hosting y dominio (aprox. $80-120/año)</li>
+      <li>El contenido (textos e imágenes) debe ser proporcionado por el cliente</li>
+      <li>Revisiones incluidas: 2 rondas en Propuesta A, 3 rondas en Propuesta B</li>
+      <li>Propuesta válida por 15 días</li>
+    </ul>
+  </div>
+
+  <footer>
+    <p><strong>Marketing VIP®</strong> · Más de 10 años transformando negocios digitalmente</p>
+    <p style="margin-top:10px;">
+      <a href="https://marketingvip.co">marketingvip.co</a> · 
+      <a href="mailto:hola@marketingvip.co">hola@marketingvip.co</a>
+    </p>
+  </footer>
+</div>
+</body>
+</html>
