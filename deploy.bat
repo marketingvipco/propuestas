@@ -17,7 +17,7 @@ if %errorlevel% equ 0 (
     echo.
     echo  ============================================
     echo   Listo! Tu sitio se actualiza en ~1 minuto
-    echo   https://adriancanom.github.io/propuestas/
+    echo   https://marketingvipco.github.io/propuestas/
     echo  ============================================
 ) else (
     echo.
