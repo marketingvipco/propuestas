@@ -1,0 +1,66 @@
+@import url('../styles.css');
+
+/* ===== CREATIVE MAGIC BOX — COLOR OVERRIDE ===== */
+:root {
+  --green-primary: #D4DC5A;
+  --green-secondary: #C5CD4E;
+  --green-dark: #B0B844;
+  --green-glow: rgba(212,220,90,0.3);
+  --border-glass: rgba(212,220,90,0.15);
+}
+
+html { scrollbar-color: rgba(212,220,90,0.2) transparent; }
+
+.pricing-card {
+  background: linear-gradient(135deg, rgba(212,220,90,0.08), rgba(212,220,90,0.02));
+  border-color: rgba(212,220,90,0.3);
+}
+
+.bottom-bar {
+  background: linear-gradient(90deg, transparent, #D4DC5A, transparent);
+}
+
+.divider-line {
+  background: linear-gradient(90deg, transparent, rgba(212,220,90,0.4), transparent);
+}
+
+.cover h1 span {
+  background: linear-gradient(135deg, #D4DC5A, #e8ef8a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.section-title span {
+  background: linear-gradient(135deg, #D4DC5A, #e8ef8a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.stat-num {
+  background: linear-gradient(135deg, #D4DC5A, #e8ef8a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.timeline-dot {
+  background: linear-gradient(135deg, #D4DC5A, #C5CD4E);
+}
+
+.cta-workana-btn {
+  background: linear-gradient(135deg, #D4DC5A, #C5CD4E);
+  color: #0a0a0a;
+}
+
+.cta-workana-btn:hover {
+  background: linear-gradient(135deg, #e8ef8a, #D4DC5A);
+}
+
+/* Logo image in cover */
+.cmb-logo-img {
+  max-width: 220px;
+  height: auto;
+  margin-bottom: 10px;
+}
