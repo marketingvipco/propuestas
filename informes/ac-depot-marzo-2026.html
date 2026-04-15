@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Informe Marzo 2026 — AC Depot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:#1A1A2E;--navy2:#0F1627;--green:#51DD7D;--green-dark:#1a9e50;
+  --gray1:#F1F5F9;--gray2:#E2E8F0;--gray3:#94A3B8;--gray4:#64748B;--white:#FFFFFF;--black:#1E293B;
+  --amber:#F59E0B;--red:#EF4444;
+  --pill-pub-bg:#DCFCE7;--pill-pub-tx:#15803D;--pill-apro-bg:#DBEAFE;--pill-apro-tx:#1D4ED8;
+  --pill-stand-bg:#FEF9C3;--pill-stand-tx:#854D0E;--pill-cam-bg:#FEE2E2;--pill-cam-tx:#B91C1C;
+  --pill-proc-bg:#E0F2FE;--pill-proc-tx:#0369A1;--pill-abi-bg:#F1F5F9;--pill-abi-tx:#475569;
+  --pill-rev-bg:#FFF7ED;--pill-rev-tx:#C2410C;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Geist',sans-serif;background:#0a0e1a;color:var(--black);font-size:15px;}
+.hero{background:var(--navy2);min-height:100vh;display:grid;grid-template-rows:auto 1fr auto;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 20% 50%,rgba(81,221,125,.07) 0%,transparent 70%),radial-gradient(ellipse 50% 80% at 80% 20%,rgba(26,26,46,.8) 0%,transparent 60%);pointer-events:none;}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(81,221,125,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(81,221,125,.03) 1px,transparent 1px);background-size:60px 60px;}
+.hero-topbar{display:flex;justify-content:space-between;align-items:center;padding:24px 56px;position:relative;z-index:2;border-bottom:1px solid rgba(81,221,125,.15);}
+.logo{font-family:'Geist',sans-serif;font-weight:800;font-size:18px;color:var(--white);letter-spacing:-.5px;}
+.logo span{color:var(--green);}
+.hero-badge{background:rgba(81,221,125,.1);border:1px solid rgba(81,221,125,.3);color:var(--green);font-size:11px;font-weight:500;padding:4px 12px;border-radius:20px;letter-spacing:1px;text-transform:uppercase;}
+.hero-body{display:flex;align-items:center;justify-content:space-between;padding:0 56px;gap:60px;position:relative;z-index:2;}
+.hero-left{flex:1;}
+.hero-eyebrow{color:var(--green);font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+.hero-eyebrow::before{content:'';display:block;width:30px;height:1px;background:var(--green);}
+.hero-title{font-family:'Geist',sans-serif;font-weight:800;font-size:clamp(52px,6vw,88px);line-height:.95;color:var(--white);letter-spacing:-3px;margin-bottom:28px;}
+.hero-title em{color:var(--green);font-style:normal;display:block;}
+.hero-subtitle{color:var(--gray3);font-size:16px;font-weight:300;line-height:1.6;max-width:420px;margin-bottom:40px;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;}
+.hero-pill{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.6);font-size:12px;padding:6px 14px;border-radius:20px;}
+.hero-right{width:300px;flex-shrink:0;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:32px 28px;backdrop-filter:blur(10px);}
+.info-item{margin-bottom:24px;}.info-item:last-child{margin-bottom:0;}
+.info-label{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--gray3);margin-bottom:6px;}
+.info-value{font-family:'Geist',sans-serif;font-weight:600;font-size:15px;color:var(--white);}
+.info-divider{height:1px;background:rgba(255,255,255,.07);margin:0 0 24px;}
+.hero-footer{padding:24px 56px;position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;align-items:center;}
+.hero-footer-text{font-size:12px;color:var(--gray3);}
+.report{background:var(--gray1);}
+.container{max-width:1100px;margin:0 auto;padding:0 40px;}
+.section{padding:64px 0 48px;}
+.section-header{display:flex;align-items:stretch;gap:0;margin-bottom:36px;border-radius:10px;overflow:hidden;}
+.section-accent{width:5px;background:var(--green);flex-shrink:0;}
+.section-title-block{background:var(--navy);padding:18px 28px;flex:1;display:flex;align-items:center;gap:0;}
+.section-num{font-family:'Geist',sans-serif;font-size:11px;color:var(--green);letter-spacing:2px;font-weight:600;margin-right:16px;text-transform:uppercase;}
+.section-title{font-family:'Geist',sans-serif;font-weight:700;font-size:17px;color:var(--white);letter-spacing:-.3px;}
+.kpi-grid{display:grid;gap:12px;margin-bottom:36px;}
+.kpi-grid-6{grid-template-columns:repeat(6,1fr);}
+.kpi-grid-5{grid-template-columns:repeat(5,1fr);}
+.kpi-grid-4{grid-template-columns:repeat(4,1fr);}
+.kpi-card{background:var(--navy);border-radius:10px;padding:22px 16px;text-align:center;position:relative;overflow:hidden;}
+.kpi-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(81,221,125,.05) 0%,transparent 60%);pointer-events:none;}
+.kpi-val{font-family:'Geist',sans-serif;font-weight:800;font-size:30px;color:var(--white);letter-spacing:-1px;line-height:1;margin-bottom:8px;}
+.kpi-lbl{font-size:11px;color:var(--green);font-weight:500;line-height:1.3;text-transform:uppercase;letter-spacing:.5px;}
+.desc{font-size:15px;color:var(--gray4);line-height:1.7;margin-bottom:28px;}
+.desc strong{color:var(--navy);}
+.table-wrap{border-radius:10px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.07);margin-bottom:24px;}
+table{width:100%;border-collapse:collapse;background:white;font-size:13.5px;}
+thead tr{background:var(--navy);}
+thead th{padding:13px 14px;text-align:center;font-family:'Geist',sans-serif;font-weight:600;font-size:11px;color:var(--white);letter-spacing:.8px;text-transform:uppercase;white-space:nowrap;}
+thead th:first-child,thead th.tl{text-align:left;}
+tbody tr{border-bottom:1px solid var(--gray2);}
+tbody tr:last-child{border-bottom:none;}
+tbody tr:nth-child(even){background:var(--gray1);}
+tbody td{padding:11px 14px;vertical-align:middle;color:var(--black);line-height:1.4;}
+tbody td:not(:first-child){text-align:center;}
+.td-left{text-align:left!important;}.td-bold{font-weight:600;color:var(--navy);}
+.td-gray{color:var(--gray3);font-size:12.5px;}.td-date{font-family:'Geist',sans-serif;font-weight:600;font-size:12px;color:var(--navy);}
+.td-big{font-family:'Geist',sans-serif;font-weight:800;font-size:18px;color:var(--navy);}
+.pill{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap;}
+.pill-pub{background:var(--pill-pub-bg);color:var(--pill-pub-tx);}
+.pill-apro{background:var(--pill-apro-bg);color:var(--pill-apro-tx);}
+.pill-stand{background:var(--pill-stand-bg);color:var(--pill-stand-tx);}
+.pill-cam{background:var(--pill-cam-bg);color:var(--pill-cam-tx);}
+.pill-proc{background:var(--pill-proc-bg);color:var(--pill-proc-tx);}
+.pill-abi{background:var(--pill-abi-bg);color:var(--pill-abi-tx);}
+.pill-rev{background:var(--pill-rev-bg);color:var(--pill-rev-tx);}
+.fmt{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;white-space:nowrap;}
+.fmt-reel{background:#EDE9FE;color:#7C3AED;}.fmt-carru{background:#DBEAFE;color:#1D4ED8;}
+.fmt-hist{background:#FEF3C7;color:#B45309;}.fmt-post{background:#DCFCE7;color:#15803D;}
+.fmt-portada{background:#FFE4E6;color:#BE185D;}.fmt-mail{background:#FEF9C3;color:#854D0E;}
+.fmt-firma{background:#F0FDF4;color:#065F46;}
+.brand{display:inline-block;padding:2px 8px;border-radius:12px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap;}
+.brand-gree{background:#E0F2FE;color:#0369A1;}
+.brand-goodway{background:#FEF9C3;color:#854D0E;}
+.brand-trane{background:#DCFCE7;color:#15803D;}
+.brand-daikin{background:#EDE9FE;color:#7C3AED;}
+.brand-tecam{background:#FFE4E6;color:#BE185D;}
+.brand-isocanale{background:#FFF7ED;color:#C2410C;}
+.brand-sp{background:#F1F5F9;color:#475569;}
+.analysis-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:32px;}
+.analysis-block{background:white;border-radius:10px;padding:20px 22px;border-left:4px solid var(--green);box-shadow:0 1px 4px rgba(0,0,0,.05);}
+.analysis-title{font-family:'Geist',sans-serif;font-weight:700;font-size:14px;color:var(--navy);margin-bottom:8px;}
+.analysis-text{font-size:13.5px;color:var(--gray4);line-height:1.6;}
+.next-section{margin-bottom:28px;}
+.next-header{background:var(--navy);border-radius:8px 8px 0 0;padding:14px 20px;display:flex;align-items:center;gap:12px;border-left:4px solid var(--green);}
+.next-header-title{font-family:'Geist',sans-serif;font-weight:700;font-size:14px;color:var(--white);}
+.next-items{background:white;border-radius:0 0 8px 8px;overflow:hidden;}
+.next-item{display:grid;grid-template-columns:44px 1fr;border-bottom:1px solid var(--gray2);}
+.next-item:last-child{border-bottom:none;}
+.next-num{background:var(--gray1);display:flex;align-items:center;justify-content:center;font-family:'Geist',sans-serif;font-weight:800;font-size:16px;color:var(--green-dark);padding:14px;}
+.next-text{padding:14px 18px;font-size:14px;color:var(--black);line-height:1.5;display:flex;align-items:center;}
+.closing{background:var(--navy);border-left:6px solid var(--green);border-radius:10px;padding:28px 32px;margin-top:16px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+.closing-text{color:rgba(255,255,255,.8);font-size:14px;line-height:1.6;}.closing-text strong{color:var(--white);}
+.closing-link{color:var(--green);font-weight:600;font-size:14px;white-space:nowrap;}
+.section-sub{font-family:'Geist',sans-serif;font-weight:700;font-size:14.5px;color:var(--navy);margin:32px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--gray2);}
+.note{font-size:12.5px;color:var(--gray3);font-style:italic;margin-top:10px;}
+.footer-bar{background:var(--navy2);padding:20px 40px;display:flex;justify-content:space-between;align-items:center;}
+.footer-bar p{color:var(--gray3);font-size:12px;}.footer-bar span{color:var(--green);font-weight:600;font-size:12px;}
+@media(max-width:900px){.hero-body{flex-direction:column;padding:40px 24px;}.hero-right{width:100%;}.kpi-grid-6,.kpi-grid-5{grid-template-columns:repeat(3,1fr);}.kpi-grid-4{grid-template-columns:repeat(2,1fr);}.analysis-grid{grid-template-columns:1fr;}.container{padding:0 20px;}.hero-topbar,.hero-footer{padding:20px 24px;}}
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-topbar">
+    <div class="logo">Marketing <span>VIP</span>®</div>
+    <div class="hero-badge">Informe Mensual · Marzo 2026</div>
+  </div>
+  <div class="hero-body">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Gestión Digital Integral</div>
+      <h1 class="hero-title">AC<em>Depot</em></h1>
+      <p class="hero-subtitle">Resumen completo del trabajo realizado en Social Media, producción de contenido por marcas y gestión de activos digitales durante el mes de marzo 2026.</p>
+      <div class="hero-pills">
+        <span class="hero-pill">● Social Media & Contenidos</span>
+        <span class="hero-pill">● Producción por Marca</span>
+        <span class="hero-pill">● Reels & Portadas</span>
+        <span class="hero-pill">● Mail Marketing</span>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="info-item"><div class="info-label">Preparado por</div><div class="info-value">Marketing VIP®</div></div>
+      <div class="info-divider"></div>
+      <div class="info-item"><div class="info-label">Cliente</div><div class="info-value">AC Depot</div></div>
+      <div class="info-divider"></div>
+      <div class="info-item"><div class="info-label">Período</div><div class="info-value">1 – 31 Marzo, 2026</div></div>
+      <div class="info-divider"></div>
+      <div class="info-item"><div class="info-label">Entregado</div><div class="info-value">Abril 2026</div></div>
+    </div>
+  </div>
+  <div class="hero-footer">
+    <span class="hero-footer-text">marketingvip.co · adrian@marketingvip.co</span>
+    <span class="hero-footer-text" style="color:rgba(255,255,255,.2)">Confidencial — Solo para uso del cliente</span>
+  </div>
+</section>
+<div class="report">
+
+<!-- RESUMEN EJECUTIVO -->
+<section class="section">
+  <div class="container">
+    <div class="section-header"><div class="section-accent"></div><div class="section-title-block"><span class="section-title">Resumen Ejecutivo</span></div></div>
+    <p class="desc">En marzo 2026, Marketing VIP® ejecutó la gestión completa de contenido para <strong>AC Depot</strong>, distribuidor de equipos de climatización (HVAC). El mes estuvo organizado por marcas: <strong>GREE, GOODWAY y Trane</strong>, con producción de Reels con portadas, Carruseles, Posts, Historias y firma de mails. Se gestionaron <strong>21 entregables</strong> en el mes, todos publicados.</p>
+    <div class="kpi-grid kpi-grid-5">
+      <div class="kpi-card"><div class="kpi-val">21</div><div class="kpi-lbl">Piezas gestionadas</div></div>
+      <div class="kpi-card"><div class="kpi-val">20</div><div class="kpi-lbl">Publicadas</div></div>
+      <div class="kpi-card"><div class="kpi-val">5</div><div class="kpi-lbl">Reels producidos</div></div>
+      <div class="kpi-card"><div class="kpi-val">3</div><div class="kpi-lbl">Marcas cubiertas</div></div>
+      <div class="kpi-card"><div class="kpi-val">1</div><div class="kpi-lbl">Firma de mails</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 1: CONTENIDO PUBLICADO -->
+<section class="section" style="background:white;padding-top:56px">
+  <div class="container">
+    <div class="section-header"><div class="section-accent"></div><div class="section-title-block"><span class="section-num">01</span><span class="section-title">Contenido Publicado — Marzo 2026</span></div></div>
+    <p class="desc">Producción organizada por semana y marca. Cada Reel incluyó diseño de portada separado. El mes cubrió la rotación de marcas <strong>GOODWAY</strong> (semana 1–2) y <strong>GREE</strong> (semana 3–4), más un entregable especial de <strong>firma de mails</strong>.</p>
+    <div class="kpi-grid kpi-grid-5">
+      <div class="kpi-card"><div class="kpi-val">5</div><div class="kpi-lbl">Reels</div></div>
+      <div class="kpi-card"><div class="kpi-val">3</div><div class="kpi-lbl">Carruseles</div></div>
+      <div class="kpi-card"><div class="kpi-val">6</div><div class="kpi-lbl">Historias</div></div>
+      <div class="kpi-card"><div class="kpi-val">4</div><div class="kpi-lbl">Posts</div></div>
+      <div class="kpi-card"><div class="kpi-val">3</div><div class="kpi-lbl">Portadas reel</div></div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th>Fecha</th><th>Formato</th><th class="tl">Pieza / Descripción</th><th>Marca</th><th>Estado</th><th>Equipo</th>
+        </tr></thead>
+        <tbody>
+          <tr><td class="td-date">5 MAR</td><td><span class="fmt fmt-hist">Historia</span></td><td class="td-left">Historia — GREE (inicio de ciclo)</td><td><span class="brand brand-gree">GREE</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / EM / MIO</td></tr>
+          <tr><td class="td-date">7 MAR</td><td><span class="fmt fmt-post">Post</span></td><td class="td-left">Post — Contenido orgánico</td><td><span class="brand brand-gree">GREE</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / EM / MIO</td></tr>
+          <tr><td class="td-date">9 MAR</td><td><span class="fmt fmt-hist">Historia</span></td><td class="td-left">Historia — Contenido semanal</td><td><span class="brand brand-sp">General</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / EM / MIO</td></tr>
+          <tr><td class="td-date">12 MAR</td><td><span class="fmt fmt-portada">Portada</span></td><td class="td-left">Portada de Reel — GOODWAY</td><td><span class="brand brand-goodway">GOODWAY</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">JV</td></tr>
+          <tr><td class="td-date">12 MAR</td><td><span class="fmt fmt-reel">Reel</span></td><td class="td-left">Reel — GOODWAY</td><td><span class="brand brand-goodway">GOODWAY</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">MIO / TG / EM</td></tr>
+          <tr><td class="td-date">13 MAR</td><td><span class="fmt fmt-hist">Historia</span></td><td class="td-left">Historia — GOODWAY</td><td><span class="brand brand-goodway">GOODWAY</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">JV / TG / EM / MIO</td></tr>
+          <tr><td class="td-date">15 MAR</td><td><span class="fmt fmt-post">Post</span></td><td class="td-left">Post — GOODWAY</td><td><span class="brand brand-goodway">GOODWAY</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / EM / MIO</td></tr>
+          <tr><td class="td-date">17 MAR</td><td><span class="fmt fmt-portada">Portada</span></td><td class="td-left">Portada de Reel — GOODWAY</td><td><span class="brand brand-goodway">GOODWAY</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">JV</td></tr>
+          <tr><td class="td-date">17 MAR</td><td><span class="fmt fmt-hist">Historia</span></td><td class="td-left">Historia — GOODWAY</td><td><span class="brand brand-goodway">GOODWAY</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / EM / MIO</td></tr>
+          <tr><td class="td-date">19 MAR</td><td><span class="fmt fmt-reel">Reel</span></td><td class="td-left">Reel — GOODWAY</td><td><span class="brand brand-goodway">GOODWAY</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / EM / MIO / JQ</td></tr>
+          <tr><td class="td-date">20 MAR</td><td><span class="fmt fmt-post">Post</span></td><td class="td-left">Post — GREE</td><td><span class="brand brand-gree">GREE</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / EM / MIO</td></tr>
+          <tr><td class="td-date">22 MAR</td><td><span class="fmt fmt-hist">Historia</span></td><td class="td-left">Historia — GREE</td><td><span class="brand brand-gree">GREE</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">EM / TG / JV / MIO</td></tr>
+          <tr><td class="td-date">24 MAR</td><td><span class="fmt fmt-carru">Carrusel</span></td><td class="td-left">Carrusel — GREE</td><td><span class="brand brand-gree">GREE</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / EM / MIO</td></tr>
+          <tr><td class="td-date">26 MAR</td><td><span class="fmt fmt-hist">Historia</span></td><td class="td-left">Historia — GREE (con Adrián Cano)</td><td><span class="brand brand-gree">GREE</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / EM / MIO / AC</td></tr>
+          <tr><td class="td-date">27 MAR</td><td><span class="fmt fmt-portada">Portada</span></td><td class="td-left">Portada de Reel — GREE</td><td><span class="brand brand-gree">GREE</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">JV</td></tr>
+          <tr><td class="td-date">27 MAR</td><td><span class="fmt fmt-reel">Reel</span></td><td class="td-left">Reel — GREE</td><td><span class="brand brand-gree">GREE</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / EM / MIO / JQ</td></tr>
+          <tr><td class="td-date">28 MAR</td><td><span class="fmt fmt-hist">Historia</span></td><td class="td-left">Historia — Contenido semanal</td><td><span class="brand brand-sp">General</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / EM / MIO</td></tr>
+          <tr><td class="td-date">30 MAR</td><td><span class="fmt fmt-post">Post</span></td><td class="td-left">Post — Contenido orgánico</td><td><span class="brand brand-sp">General</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / EM / MIO</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">TG = Teresita Gil · JV = Jesus Villalba · EM = Elizabeth Mesa · MIO = Maria Isabel Orjuela · JQ = Juan Quintero · AC = Adrián Cano</p>
+  </div>
+</section>
+
+<!-- SECCIÓN 2: PRODUCCIÓN POR MARCA -->
+<section class="section">
+  <div class="container">
+    <div class="section-header"><div class="section-accent"></div><div class="section-title-block"><span class="section-num">02</span><span class="section-title">Producción por Marca y Entregables Especiales</span></div></div>
+    <p class="desc">El contenido de marzo siguió la estrategia de rotación por marcas representadas por AC Depot. Además del contenido de redes, se entregó una plantilla de firma de mails corporativa.</p>
+
+    <div class="section-sub">Distribución por marca</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th class="tl">Marca</th><th>Reels</th><th>Portadas</th><th>Carruseles</th><th>Posts</th><th>Historias</th><th>Total</th></tr></thead>
+        <tbody>
+          <tr><td class="td-left"><span class="brand brand-goodway">GOODWAY</span></td><td class="td-bold">2</td><td class="td-bold">2</td><td>0</td><td>1</td><td>3</td><td class="td-big">8</td></tr>
+          <tr><td class="td-left"><span class="brand brand-gree">GREE</span></td><td class="td-bold">1</td><td class="td-bold">1</td><td>1</td><td>2</td><td>3</td><td class="td-big">8</td></tr>
+          <tr><td class="td-left"><span class="brand brand-sp">General / Orgánico</span></td><td>0</td><td>0</td><td>0</td><td>1</td><td>2</td><td class="td-big">3</td></tr>
+          <tr><td class="td-left" style="font-weight:700">Entregable especial</td><td colspan="5" class="td-left td-gray">Plantilla Firma de Mails Corporativa (3 opciones)</td><td class="td-big">1</td></tr>
+          <tr style="background:#F0FDF4"><td class="td-left td-bold" style="color:#15803D">TOTAL MARZO</td><td class="td-bold">3</td><td class="td-bold">3</td><td class="td-bold">1</td><td class="td-bold">4</td><td class="td-bold">8</td><td style="font-family:'Geist',sans-serif;font-weight:800;font-size:20px;color:#15803D">21</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section-sub">Entregable especial: Firma de Mails</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th class="tl">Entregable</th><th class="tl">Descripción</th><th>Estado</th><th>Responsable</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="td-left td-bold">Plantilla Firma de Mails — 3 opciones</td>
+            <td class="td-left">Diseño de 1 plantilla corporativa con 3 variantes de firma de correo electrónico para el equipo de AC Depot. Incluye logo, datos de contacto y formato responsive.</td>
+            <td><span class="pill pill-pub">Publicado</span></td>
+            <td class="td-gray">TG / JV / EM / MIO</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 3: TAREAS ESTRATÉGICAS -->
+<section class="section" style="background:white;padding-top:56px">
+  <div class="container">
+    <div class="section-header"><div class="section-accent"></div><div class="section-title-block"><span class="section-num">03</span><span class="section-title">Tareas Estratégicas y Planificación</span></div></div>
+    <p class="desc">Además del contenido publicado, se gestionaron tareas de planificación editorial y producción de activos de marca.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th class="tl">Tarea / Entregable</th><th class="tl">Descripción</th><th>Estado</th><th>Responsable</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="td-left td-bold">Grilla de Contenidos (Roadmap)</td>
+            <td class="td-left">Planificación de la grilla editorial mensual con fechas, marcas, formatos y copys por pieza.</td>
+            <td><span class="pill pill-pub">Publicado</span></td>
+            <td class="td-gray">TG</td>
+          </tr>
+          <tr>
+            <td class="td-left td-bold">Propuesta de Videos</td>
+            <td class="td-left">Documento con propuestas creativas para videos de producto. Incluye conceptos por marca y formatos recomendados.</td>
+            <td><span class="pill pill-pub">Publicado</span></td>
+            <td class="td-gray">TG / EM / MIO / AC / JQ</td>
+          </tr>
+          <tr>
+            <td class="td-left td-bold">Firma de Mails — 1 plantilla 3 opciones</td>
+            <td class="td-left">Diseño corporativo de firmas de correo electrónico con variantes para el equipo de ventas y soporte.</td>
+            <td><span class="pill pill-pub">Publicado</span></td>
+            <td class="td-gray">TG / JV / EM / MIO</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 4: ANÁLISIS DE GESTIÓN -->
+<section class="section">
+  <div class="container">
+    <div class="section-header"><div class="section-accent"></div><div class="section-title-block"><span class="section-num">04</span><span class="section-title">Análisis de Gestión — Marzo 2026</span></div></div>
+    <div class="analysis-grid">
+      <div class="analysis-block">
+        <div class="analysis-title">🗓️ Cobertura completa del mes</div>
+        <div class="analysis-text">Se publicó contenido prácticamente todos los días hábiles del mes, manteniendo una frecuencia alta de publicación: <strong>18 piezas en 26 días</strong>, con publicaciones cada 1–2 días en promedio.</div>
+      </div>
+      <div class="analysis-block">
+        <div class="analysis-title">🏷️ Estrategia de rotación por marca</div>
+        <div class="analysis-text">El mes siguió la estrategia acordada de rotar entre <strong>GOODWAY</strong> (primera mitad) y <strong>GREE</strong> (segunda mitad), permitiendo destacar cada marca con su propia narrativa y formatos específicos.</div>
+      </div>
+      <div class="analysis-block">
+        <div class="analysis-title">🎬 Alta producción de video</div>
+        <div class="analysis-text">Se produjeron <strong>3 Reels con portadas personalizadas</strong> en marzo. Cada Reel tuvo una portada diseñada por separado para consistencia visual en el feed. Contenido técnico especializado por marca.</div>
+      </div>
+      <div class="analysis-block">
+        <div class="analysis-title">✉️ Activos corporativos</div>
+        <div class="analysis-text">Entrega de la <strong>plantilla de firma de mails</strong> con 3 opciones de diseño: activo estratégico que refuerza la identidad corporativa de AC Depot en todas las comunicaciones por email del equipo.</div>
+      </div>
+      <div class="analysis-block">
+        <div class="analysis-title">✅ 100% de publicaciones completadas</div>
+        <div class="analysis-text">Todas las piezas del mes de marzo fueron publicadas exitosamente. Sin tareas pendientes ni rechazos de contenido. El flujo de aprobación cliente → publicación funcionó sin interrupciones.</div>
+      </div>
+      <div class="analysis-block">
+        <div class="analysis-title">📋 Planificación adelantada</div>
+        <div class="analysis-text">Durante marzo se planificó y estructuró el contenido de <strong>abril y mayo</strong>, con Reels temáticos ya definidos: condensador por agua (4 mayo), láminas isocanale (28 abril), y más contenido de producto.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 5: CONSOLIDADO -->
+<section class="section" style="background:white;padding-top:56px">
+  <div class="container">
+    <div class="section-header"><div class="section-accent"></div><div class="section-title-block"><span class="section-num">05</span><span class="section-title">Consolidado de Estados — Todas las Tareas</span></div></div>
+    <p class="desc">Listado completo de las <strong>21 tareas gestionadas</strong> en marzo 2026 para AC Depot.</p>
+    <div class="kpi-grid kpi-grid-4" style="margin-bottom:28px">
+      <div class="kpi-card"><div class="kpi-val">20</div><div class="kpi-lbl">Publicado</div></div>
+      <div class="kpi-card"><div class="kpi-val">1</div><div class="kpi-lbl">Aprobado</div></div>
+      <div class="kpi-card"><div class="kpi-val">0</div><div class="kpi-lbl">Pendientes</div></div>
+      <div class="kpi-card"><div class="kpi-val">100%</div><div class="kpi-lbl">Tasa de entrega</div></div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th class="tl">Tarea / Entregable</th><th>Formato</th><th>Marca</th><th>Estado</th><th>Responsable</th></tr></thead>
+        <tbody>
+          <tr><td class="td-left">5 MAR – Historia GREE</td><td><span class="fmt fmt-hist">Historia</span></td><td><span class="brand brand-gree">GREE</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / EM / MIO</td></tr>
+          <tr><td class="td-left">7 MAR – Post</td><td><span class="fmt fmt-post">Post</span></td><td><span class="brand brand-gree">GREE</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / EM / MIO</td></tr>
+          <tr><td class="td-left">9 MAR – Historia</td><td><span class="fmt fmt-hist">Historia</span></td><td><span class="brand brand-sp">General</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / EM / MIO</td></tr>
+          <tr><td class="td-left">12 MAR – Portada Reel GOODWAY</td><td><span class="fmt fmt-portada">Portada</span></td><td><span class="brand brand-goodway">GOODWAY</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">JV</td></tr>
+          <tr><td class="td-left">12 MAR – Reel GOODWAY</td><td><span class="fmt fmt-reel">Reel</span></td><td><span class="brand brand-goodway">GOODWAY</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">MIO / TG / EM</td></tr>
+          <tr><td class="td-left">13 MAR – Historia GOODWAY</td><td><span class="fmt fmt-hist">Historia</span></td><td><span class="brand brand-goodway">GOODWAY</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">JV / TG / EM / MIO</td></tr>
+          <tr><td class="td-left">15 MAR – Post GOODWAY</td><td><span class="fmt fmt-post">Post</span></td><td><span class="brand brand-goodway">GOODWAY</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / EM / MIO</td></tr>
+          <tr><td class="td-left">17 MAR – Portada Reel GOODWAY</td><td><span class="fmt fmt-portada">Portada</span></td><td><span class="brand brand-goodway">GOODWAY</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">JV</td></tr>
+          <tr><td class="td-left">17 MAR – Historia GOODWAY</td><td><span class="fmt fmt-hist">Historia</span></td><td><span class="brand brand-goodway">GOODWAY</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / EM / MIO</td></tr>
+          <tr><td class="td-left">19 MAR – Reel GOODWAY</td><td><span class="fmt fmt-reel">Reel</span></td><td><span class="brand brand-goodway">GOODWAY</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / EM / MIO / JQ</td></tr>
+          <tr><td class="td-left">20 MAR – Post GREE</td><td><span class="fmt fmt-post">Post</span></td><td><span class="brand brand-gree">GREE</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / EM / MIO</td></tr>
+          <tr><td class="td-left">22 MAR – Historia GREE</td><td><span class="fmt fmt-hist">Historia</span></td><td><span class="brand brand-gree">GREE</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">EM / TG / JV / MIO</td></tr>
+          <tr><td class="td-left">24 MAR – Carrusel GREE</td><td><span class="fmt fmt-carru">Carrusel</span></td><td><span class="brand brand-gree">GREE</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / EM / MIO</td></tr>
+          <tr><td class="td-left">26 MAR – Historia GREE</td><td><span class="fmt fmt-hist">Historia</span></td><td><span class="brand brand-gree">GREE</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / EM / MIO / AC</td></tr>
+          <tr><td class="td-left">27 MAR – Portada Reel GREE</td><td><span class="fmt fmt-portada">Portada</span></td><td><span class="brand brand-gree">GREE</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">JV</td></tr>
+          <tr><td class="td-left">27 MAR – Reel GREE</td><td><span class="fmt fmt-reel">Reel</span></td><td><span class="brand brand-gree">GREE</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / EM / MIO / JQ</td></tr>
+          <tr><td class="td-left">28 MAR – Historia General</td><td><span class="fmt fmt-hist">Historia</span></td><td><span class="brand brand-sp">General</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / EM / MIO</td></tr>
+          <tr><td class="td-left">30 MAR – Post General</td><td><span class="fmt fmt-post">Post</span></td><td><span class="brand brand-sp">General</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / EM / MIO</td></tr>
+          <tr><td class="td-left">Firma de Mails — 1 plantilla 3 opciones</td><td><span class="fmt fmt-firma">Firma Mail</span></td><td><span class="brand brand-sp">Corporativo</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / EM / MIO</td></tr>
+          <tr><td class="td-left">Propuesta de Videos</td><td><span class="fmt fmt-firma">Estrategia</span></td><td><span class="brand brand-sp">General</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / EM / MIO / AC / JQ</td></tr>
+          <tr><td class="td-left">Grilla de Contenidos (Roadmap)</td><td><span class="fmt fmt-firma">Planif.</span></td><td><span class="brand brand-sp">General</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">TG = Teresita Gil · JV = Jesus Villalba · EM = Elizabeth Mesa · MIO = Maria Isabel Orjuela · JQ = Juan Quintero · AC = Adrián Cano</p>
+  </div>
+</section>
+
+<!-- SECCIÓN 6: PRÓXIMOS PASOS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header"><div class="section-accent"></div><div class="section-title-block"><span class="section-num">06</span><span class="section-title">Próximos Pasos — Abril / Mayo 2026</span></div></div>
+    <div class="next-section">
+      <div class="next-header"><span style="font-size:18px">📱</span><span class="next-header-title">Contenido Orgánico — Marcas</span></div>
+      <div class="next-items">
+        <div class="next-item"><div class="next-num">1</div><div class="next-text">Publicar grilla de abril con nueva rotación de marcas: Reels de Disponibilidad de Stock (14 ABR) y Minisplit Trane (10 ABR) ya en producción</div></div>
+        <div class="next-item"><div class="next-num">2</div><div class="next-text">Ejecutar Reel de Láminas Isocanale (28 ABR) y Condensador por Agua (4 MAY) — ya planificados con equipo y cliente</div></div>
+        <div class="next-item"><div class="next-num">3</div><div class="next-text">Continuar la rotación mensual por marca (Trane, GREE, GOODWAY, DAIKIN, TECAM) según estrategia acordada</div></div>
+        <div class="next-item"><div class="next-num">4</div><div class="next-text">Mantener producción de portadas personalizadas para cada Reel — garantiza consistencia visual en el feed</div></div>
+      </div>
+    </div>
+    <div class="next-section">
+      <div class="next-header"><span style="font-size:18px">🎬</span><span class="next-header-title">Producción de Video</span></div>
+      <div class="next-items">
+        <div class="next-item"><div class="next-num">1</div><div class="next-text">Coordinar sesión de grabación para Reel de Disponibilidad de Stock — requiere aprobación de cliente para acceso a bodega</div></div>
+        <div class="next-item"><div class="next-num">2</div><div class="next-text">Implementar propuestas de video aprobadas en marzo para ampliar la biblioteca de contenido por marca</div></div>
+        <div class="next-item"><div class="next-num">3</div><div class="next-text">Evaluar reels en tendencia para adaptar una versión con productos AC Depot (como se hizo con Therians en Euro Money)</div></div>
+      </div>
+    </div>
+    <div class="next-section">
+      <div class="next-header"><span style="font-size:18px">📧</span><span class="next-header-title">Mail Marketing & Corporativo</span></div>
+      <div class="next-items">
+        <div class="next-item"><div class="next-num">1</div><div class="next-text">Implementar las firmas de mail aprobadas en todos los correos del equipo de ventas y soporte de AC Depot</div></div>
+        <div class="next-item"><div class="next-num">2</div><div class="next-text">Evaluar activación de campaña de email marketing con base de datos del cliente — definir segmentación por tipo de producto</div></div>
+        <div class="next-item"><div class="next-num">3</div><div class="next-text">Enviar primer mail de la estrategia digital si el cliente aprueba la base de datos y el asunto de la primera campaña</div></div>
+      </div>
+    </div>
+    <div class="closing">
+      <div class="closing-text">Este informe fue preparado por el equipo de <strong>Marketing VIP®</strong> como parte del servicio mensual de gestión para AC Depot. Para consultas, aprobaciones o comentarios:</div>
+      <a class="closing-link" href="mailto:adrian@marketingvip.co">adrian@marketingvip.co</a>
+    </div>
+  </div>
+</section>
+
+</div>
+<footer class="footer-bar">
+  <p>© 2026 Marketing VIP® · Todos los derechos reservados · Informe confidencial</p>
+  <span>marketingvip.co</span>
+</footer>
+</body>
+</html>
