@@ -7,7 +7,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#1A1A2E;--navy2:#0F1627;--green:#51DD7D;--green-dark:#1a9e50;--gray1:#F1F5F9;--gray2:#E2E8F0;--gray3:#94A3B8;--gray4:#64748B;--white:#FFFFFF;--black:#1E293B;--amber:#F59E0B;--red:#EF4444;--pill-pub-bg:#DCFCE7;--pill-pub-tx:#15803D;--pill-apro-bg:#DBEAFE;--pill-apro-tx:#1D4ED8;--pill-stand-bg:#FEF9C3;--pill-stand-tx:#854D0E;--pill-cam-bg:#FEE2E2;--pill-cam-tx:#B91C1C;--pill-proc-bg:#E0F2FE;--pill-proc-tx:#0369A1;--pill-abi-bg:#F1F5F9;--pill-abi-tx:#475569;--pill-rev-bg:#FFF7ED;--pill-rev-tx:#C2410C;}
+:root{--navy:#1A1A2E;--navy2:#0F1627;--green:#51DD7D;--green-dark:#1a9e50;--gray1:#F1F5F9;--gray2:#E2E8F0;--gray3:#94A3B8;--gray4:#64748B;--white:#FFFFFF;--black:#1E293B;--amber:#F59E0B;--red:#EF4444;--blue:#3B82F6;
+--pill-pub-bg:#DCFCE7;--pill-pub-tx:#15803D;--pill-apro-bg:#DBEAFE;--pill-apro-tx:#1D4ED8;--pill-stand-bg:#FEF9C3;--pill-stand-tx:#854D0E;--pill-cam-bg:#FEE2E2;--pill-cam-tx:#B91C1C;--pill-proc-bg:#E0F2FE;--pill-proc-tx:#0369A1;--pill-abi-bg:#F1F5F9;--pill-abi-tx:#475569;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}body{font-family:'Geist',sans-serif;background:#0a0e1a;color:var(--black);font-size:15px;}
 .hero{background:var(--navy2);min-height:100vh;display:grid;grid-template-rows:auto 1fr auto;position:relative;overflow:hidden;}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 20% 50%,rgba(81,221,125,.07) 0%,transparent 70%),radial-gradient(ellipse 50% 80% at 80% 20%,rgba(26,26,46,.8) 0%,transparent 60%);pointer-events:none;}
@@ -19,7 +20,7 @@
 .hero-left{flex:1;}
 .hero-eyebrow{color:var(--green);font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:10px;}
 .hero-eyebrow::before{content:'';display:block;width:30px;height:1px;background:var(--green);}
-.hero-title{font-family:'Geist',sans-serif;font-weight:800;font-size:clamp(52px,6vw,88px);line-height:.95;color:var(--white);letter-spacing:-3px;margin-bottom:28px;}
+.hero-title{font-family:'Geist',sans-serif;font-weight:800;font-size:clamp(48px,5.5vw,80px);line-height:.95;color:var(--white);letter-spacing:-3px;margin-bottom:28px;}
 .hero-title em{color:var(--green);font-style:normal;display:block;}
 .hero-subtitle{color:var(--gray3);font-size:16px;font-weight:300;line-height:1.6;max-width:420px;margin-bottom:40px;}
 .hero-pills{display:flex;flex-wrap:wrap;gap:8px;}
@@ -35,13 +36,17 @@
 .section{padding:64px 0 48px;}
 .section-header{display:flex;align-items:stretch;gap:0;margin-bottom:36px;border-radius:10px;overflow:hidden;}
 .section-accent{width:5px;background:var(--green);flex-shrink:0;}
-.section-title-block{background:var(--navy);padding:18px 28px;flex:1;display:flex;align-items:center;gap:0;}
+.section-title-block{background:var(--navy);padding:18px 28px;flex:1;display:flex;align-items:center;}
 .section-num{font-family:'Geist',sans-serif;font-size:11px;color:var(--green);letter-spacing:2px;font-weight:600;margin-right:16px;text-transform:uppercase;}
 .section-title{font-family:'Geist',sans-serif;font-weight:700;font-size:17px;color:var(--white);letter-spacing:-.3px;}
+.meta-badge{background:rgba(24,119,242,.15);border:1px solid rgba(24,119,242,.4);color:#60A5FA;font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:.5px;text-transform:uppercase;margin-left:12px;}
 .kpi-grid{display:grid;gap:12px;margin-bottom:36px;}
 .kpi-grid-6{grid-template-columns:repeat(6,1fr);}.kpi-grid-5{grid-template-columns:repeat(5,1fr);}.kpi-grid-4{grid-template-columns:repeat(4,1fr);}
 .kpi-card{background:var(--navy);border-radius:10px;padding:22px 16px;text-align:center;position:relative;overflow:hidden;}
 .kpi-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(81,221,125,.05) 0%,transparent 60%);pointer-events:none;}
+.kpi-card.meta-card{background:linear-gradient(135deg,#1a2744 0%,#0f1627 100%);border:1px solid rgba(24,119,242,.2);}
+.kpi-card.meta-card::after{background:linear-gradient(135deg,rgba(24,119,242,.08) 0%,transparent 60%);}
+.kpi-card.meta-card .kpi-lbl{color:#60A5FA;}
 .kpi-val{font-family:'Geist',sans-serif;font-weight:800;font-size:30px;color:var(--white);letter-spacing:-1px;line-height:1;margin-bottom:8px;}
 .kpi-lbl{font-size:11px;color:var(--green);font-weight:500;line-height:1.3;text-transform:uppercase;letter-spacing:.5px;}
 .desc{font-size:15px;color:var(--gray4);line-height:1.7;margin-bottom:28px;}.desc strong{color:var(--navy);}
@@ -50,17 +55,19 @@ table{width:100%;border-collapse:collapse;background:white;font-size:13.5px;}
 thead tr{background:var(--navy);}
 thead th{padding:13px 14px;text-align:center;font-family:'Geist',sans-serif;font-weight:600;font-size:11px;color:var(--white);letter-spacing:.8px;text-transform:uppercase;white-space:nowrap;}
 thead th.tl,thead th:first-child{text-align:left;}
+thead.meta-head tr{background:linear-gradient(90deg,#1a2744,#162032);}
 tbody tr{border-bottom:1px solid var(--gray2);}tbody tr:last-child{border-bottom:none;}tbody tr:nth-child(even){background:var(--gray1);}
 tbody td{padding:11px 14px;vertical-align:middle;color:var(--black);line-height:1.4;}tbody td:not(:first-child){text-align:center;}
 .td-left{text-align:left!important;}.td-bold{font-weight:600;color:var(--navy);}.td-gray{color:var(--gray3);font-size:12.5px;}
 .td-date{font-family:'Geist',sans-serif;font-weight:600;font-size:12px;color:var(--navy);}
 .td-big{font-family:'Geist',sans-serif;font-weight:800;font-size:20px;color:var(--navy);}
 .td-green{font-family:'Geist',sans-serif;font-weight:700;font-size:16px;color:var(--green-dark);}
+.td-blue{font-family:'Geist',sans-serif;font-weight:700;color:#2563EB;}
 .pill{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap;}
 .pill-pub{background:var(--pill-pub-bg);color:var(--pill-pub-tx);}.pill-apro{background:var(--pill-apro-bg);color:var(--pill-apro-tx);}
 .pill-stand{background:var(--pill-stand-bg);color:var(--pill-stand-tx);}.pill-cam{background:var(--pill-cam-bg);color:var(--pill-cam-tx);}
 .pill-proc{background:var(--pill-proc-bg);color:var(--pill-proc-tx);}.pill-abi{background:var(--pill-abi-bg);color:var(--pill-abi-tx);}
-.pill-rev{background:var(--pill-rev-bg);color:var(--pill-rev-tx);}
+.pill-activa{background:#DBEAFE;color:#1D4ED8;}.pill-pausa{background:#F1F5F9;color:#64748B;}
 .fmt{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;white-space:nowrap;}
 .fmt-reel{background:#EDE9FE;color:#7C3AED;}.fmt-carru{background:#DBEAFE;color:#1D4ED8;}
 .fmt-hist{background:#FEF3C7;color:#B45309;}.fmt-post{background:#DCFCE7;color:#15803D;}
@@ -72,6 +79,7 @@ tbody td{padding:11px 14px;vertical-align:middle;color:var(--black);line-height:
 .prop-blog{background:#FFE4E6;color:#BE185D;}.prop-gen{background:#F1F5F9;color:#475569;}
 .analysis-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:32px;}
 .analysis-block{background:white;border-radius:10px;padding:20px 22px;border-left:4px solid var(--green);box-shadow:0 1px 4px rgba(0,0,0,.05);}
+.analysis-block.meta-block{border-left-color:#3B82F6;background:linear-gradient(135deg,#f0f7ff 0%,white 60%);}
 .analysis-title{font-family:'Geist',sans-serif;font-weight:700;font-size:14px;color:var(--navy);margin-bottom:8px;}
 .analysis-text{font-size:13.5px;color:var(--gray4);line-height:1.6;}
 .next-section{margin-bottom:28px;}
@@ -87,12 +95,14 @@ tbody td{padding:11px 14px;vertical-align:middle;color:var(--black);line-height:
 .closing-link{color:var(--green);font-weight:600;font-size:14px;white-space:nowrap;}
 .section-sub{font-family:'Geist',sans-serif;font-weight:700;font-size:14.5px;color:var(--navy);margin:32px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--gray2);}
 .note{font-size:12.5px;color:var(--gray3);font-style:italic;margin-top:10px;}
+.api-tag{display:inline-flex;align-items:center;gap:5px;background:#EFF6FF;border:1px solid #BFDBFE;color:#2563EB;font-size:10px;font-weight:600;padding:2px 8px;border-radius:10px;text-transform:uppercase;letter-spacing:.5px;}
 .footer-bar{background:var(--navy2);padding:20px 40px;display:flex;justify-content:space-between;align-items:center;}
 .footer-bar p{color:var(--gray3);font-size:12px;}.footer-bar span{color:var(--green);font-weight:600;font-size:12px;}
 @media(max-width:900px){.hero-body{flex-direction:column;padding:40px 24px;}.hero-right{width:100%;}.kpi-grid-6,.kpi-grid-5{grid-template-columns:repeat(3,1fr);}.kpi-grid-4{grid-template-columns:repeat(2,1fr);}.analysis-grid{grid-template-columns:1fr;}.container{padding:0 20px;}.hero-topbar,.hero-footer{padding:20px 24px;}}
 </style>
 </head>
 <body>
+
 <section class="hero">
   <div class="hero-grid"></div>
   <div class="hero-topbar">
@@ -103,12 +113,12 @@ tbody td{padding:11px 14px;vertical-align:middle;color:var(--black);line-height:
     <div class="hero-left">
       <div class="hero-eyebrow">Gestión Digital Integral</div>
       <h1 class="hero-title">Arichy<em>Real Estate</em></h1>
-      <p class="hero-subtitle">Resumen completo del trabajo realizado en Social Media, Mail Marketing, producción de Reels por propiedad y gestión editorial durante el mes de marzo 2026.</p>
+      <p class="hero-subtitle">Resumen completo del trabajo realizado en Social Media, Mail Marketing vía Brevo, Reels por propiedad y campañas de Meta Ads durante marzo 2026.</p>
       <div class="hero-pills">
         <span class="hero-pill">● Social Media & Contenidos</span>
         <span class="hero-pill">● Mail Marketing (Brevo)</span>
         <span class="hero-pill">● Reels por Propiedad</span>
-        <span class="hero-pill">● Blog & Recursos</span>
+        <span class="hero-pill">● Meta Ads <span style="color:#60A5FA">↗ API</span></span>
       </div>
     </div>
     <div class="hero-right">
@@ -118,7 +128,7 @@ tbody td{padding:11px 14px;vertical-align:middle;color:var(--black);line-height:
       <div class="info-divider"></div>
       <div class="info-item"><div class="info-label">Período</div><div class="info-value">1 – 31 Marzo, 2026</div></div>
       <div class="info-divider"></div>
-      <div class="info-item"><div class="info-label">Entregado</div><div class="info-value">Abril 2026</div></div>
+      <div class="info-item"><div class="info-label">Datos Meta Ads</div><div class="info-value" style="color:#60A5FA;font-size:12px">Jalados vía API en tiempo real</div></div>
     </div>
   </div>
   <div class="hero-footer">
@@ -132,23 +142,23 @@ tbody td{padding:11px 14px;vertical-align:middle;color:var(--black);line-height:
 <section class="section">
   <div class="container">
     <div class="section-header"><div class="section-accent"></div><div class="section-title-block"><span class="section-title">Resumen Ejecutivo</span></div></div>
-    <p class="desc">En marzo 2026, Marketing VIP® ejecutó la gestión integral de <strong>Arichy Real Estate</strong>, agencia de bienes raíces de lujo en República Dominicana. El mes incluyó producción de Reels por propiedad con portadas, contenido de blog y redes sociales, <strong>3 envíos de mail marketing</strong> vía Brevo, y entregables estratégicos de guiones y recursos de equipo. Total: <strong>30 entregables gestionados</strong>, todos publicados o aprobados.</p>
+    <p class="desc">En marzo 2026, Marketing VIP® ejecutó la gestión integral de <strong>Arichy Real Estate</strong>: 30 entregables de contenido orgánico y mail marketing, más <strong>1 campaña activa de Meta Ads</strong> con resultados excepcionales. Los datos de publicidad pagada se obtuvieron directamente vía <span class="api-tag">● Meta Ads API</span> en tiempo real.</p>
     <div class="kpi-grid kpi-grid-6">
-      <div class="kpi-card"><div class="kpi-val">30</div><div class="kpi-lbl">Entregables gestionados</div></div>
-      <div class="kpi-card"><div class="kpi-val">29</div><div class="kpi-lbl">Publicados / Aprobados</div></div>
+      <div class="kpi-card"><div class="kpi-val">30</div><div class="kpi-lbl">Entregables totales</div></div>
       <div class="kpi-card"><div class="kpi-val">5</div><div class="kpi-lbl">Reels producidos</div></div>
       <div class="kpi-card"><div class="kpi-val">3</div><div class="kpi-lbl">Mails enviados</div></div>
-      <div class="kpi-card"><div class="kpi-val">5</div><div class="kpi-lbl">Propiedades destacadas</div></div>
-      <div class="kpi-card"><div class="kpi-val">100%</div><div class="kpi-lbl">Tasa de entrega</div></div>
+      <div class="kpi-card meta-card"><div class="kpi-val">$112</div><div class="kpi-lbl">Inversión Meta Ads</div></div>
+      <div class="kpi-card meta-card"><div class="kpi-val">126K</div><div class="kpi-lbl">Impresiones Meta</div></div>
+      <div class="kpi-card meta-card"><div class="kpi-val">2,675</div><div class="kpi-lbl">Clicks totales</div></div>
     </div>
   </div>
 </section>
 
-<!-- SECCIÓN 1: CONTENIDO SOCIAL MEDIA -->
+<!-- SECCIÓN 1: CONTENIDO -->
 <section class="section" style="background:white;padding-top:56px">
   <div class="container">
     <div class="section-header"><div class="section-accent"></div><div class="section-title-block"><span class="section-num">01</span><span class="section-title">Contenido Orgánico Publicado — Marzo 2026</span></div></div>
-    <p class="desc">Producción y publicación de contenido diario en redes sociales, con Reels destacados por propiedad (cada uno con portada personalizada), Carruseles educativos, Posts e Historias de propiedades específicas.</p>
+    <p class="desc">Producción y publicación diaria con Reels por propiedad (cada uno con portada personalizada), Carruseles educativos, Posts e Historias. El mes cubrió <strong>5 propiedades distintas</strong> más contenido de blog y testimonial.</p>
     <div class="kpi-grid kpi-grid-5">
       <div class="kpi-card"><div class="kpi-val">5</div><div class="kpi-lbl">Reels</div></div>
       <div class="kpi-card"><div class="kpi-val">5</div><div class="kpi-lbl">Portadas reel</div></div>
@@ -156,37 +166,35 @@ tbody td{padding:11px 14px;vertical-align:middle;color:var(--black);line-height:
       <div class="kpi-card"><div class="kpi-val">6</div><div class="kpi-lbl">Posts</div></div>
       <div class="kpi-card"><div class="kpi-val">7</div><div class="kpi-lbl">Historias / Videos</div></div>
     </div>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Fecha</th><th>Formato</th><th class="tl">Pieza / Propiedad</th><th>Estado</th><th>Equipo</th></tr></thead>
-        <tbody>
-          <tr><td class="td-date">1 MAR</td><td><span class="fmt fmt-reel">Reel</span></td><td class="td-left">Reel — Aquamarina <span class="prop prop-aq">Aquamarina</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / PB / JQ</td></tr>
-          <tr><td class="td-date">1 MAR</td><td><span class="fmt fmt-portada">Portada</span></td><td class="td-left">Portada Reel — Aquamarina</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">JV</td></tr>
-          <tr><td class="td-date">2 MAR</td><td><span class="fmt fmt-hist">Historia</span></td><td class="td-left">Historia — Negocios (Web) <span class="prop prop-gen">General</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / PB</td></tr>
-          <tr><td class="td-date">4 MAR</td><td><span class="fmt fmt-portada">Portada</span></td><td class="td-left">Portada Reel — Dezenove</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">JV</td></tr>
-          <tr><td class="td-date">4 MAR</td><td><span class="fmt fmt-reel">Reel</span></td><td class="td-left">Reel — Dezenove <span class="prop prop-dez">Dezenove</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">PB / TG / JQ</td></tr>
-          <tr><td class="td-date">6 MAR</td><td><span class="fmt fmt-carru">Carrusel</span></td><td class="td-left">Carrusel — Educativo / Inversión <span class="prop prop-gen">General</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / PB</td></tr>
-          <tr><td class="td-date">8 MAR</td><td><span class="fmt fmt-post">Post</span></td><td class="td-left">Post — Día Internacional de la Mujer <span class="prop prop-gen">General</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / PB</td></tr>
-          <tr><td class="td-date">9 MAR</td><td><span class="fmt fmt-hist">Historia</span></td><td class="td-left">Historia — Dezenove <span class="prop prop-dez">Dezenove</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">JV / PB / TG</td></tr>
-          <tr><td class="td-date">10 MAR</td><td><span class="fmt fmt-carru">Carrusel</span></td><td class="td-left">Carrusel — Educativo inversión <span class="prop prop-gen">General</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / PB</td></tr>
-          <tr><td class="td-date">12 MAR</td><td><span class="fmt fmt-portada">Portada</span></td><td class="td-left">Portada Reel — Vista Alta A101</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">JV</td></tr>
-          <tr><td class="td-date">12 MAR</td><td><span class="fmt fmt-reel">Reel</span></td><td class="td-left">Reel — Vista Alta A101 <span class="prop prop-vista">Vista Alta</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / PB / JQ</td></tr>
-          <tr><td class="td-date">14 MAR</td><td><span class="fmt fmt-hist">Historia</span></td><td class="td-left">Historia — Contenido semanal <span class="prop prop-gen">General</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / PB</td></tr>
-          <tr><td class="td-date">16 MAR</td><td><span class="fmt fmt-hist">Historia</span></td><td class="td-left">Historia / Video — Jarabacoa <span class="prop prop-gen">Jarabacoa</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / PB / JQ</td></tr>
-          <tr><td class="td-date">17 MAR</td><td><span class="fmt fmt-post">Post</span></td><td class="td-left">Post — Contenido orgánico <span class="prop prop-gen">General</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / PB</td></tr>
-          <tr><td class="td-date">18 MAR</td><td><span class="fmt fmt-carru">Carrusel</span></td><td class="td-left">Carrusel — Educativo inversión <span class="prop prop-gen">General</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / PB / JV</td></tr>
-          <tr><td class="td-date">20 MAR</td><td><span class="fmt fmt-post">Post</span></td><td class="td-left">Post — Contenido orgánico <span class="prop prop-gen">General</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">JV / PB / TG</td></tr>
-          <tr><td class="td-date">22 MAR</td><td><span class="fmt fmt-portada">Portada</span></td><td class="td-left">Portada Reel — Guajaca 50 Parte 2</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">JV / PB</td></tr>
-          <tr><td class="td-date">22 MAR</td><td><span class="fmt fmt-reel">Reel</span></td><td class="td-left">Reel — Guajaca 50 Parte 2 <span class="prop prop-gua">Guajaca 50</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">PB / TG / JQ</td></tr>
-          <tr><td class="td-date">25 MAR</td><td><span class="fmt fmt-hist">Historia</span></td><td class="td-left">Historia — Aquamarina 12-24B <span class="prop prop-aq">Aquamarina</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">PB / JV / TG</td></tr>
-          <tr><td class="td-date">26 MAR</td><td><span class="fmt fmt-post">Post</span></td><td class="td-left">Post Blog — Promocionar segmento de blog <span class="prop prop-blog">Blog</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">LO / PB / JV / TG</td></tr>
-          <tr><td class="td-date">27 MAR</td><td><span class="fmt fmt-hist">Historia</span></td><td class="td-left">Historia Blog — Invertir en RD: lujo <span class="prop prop-blog">Blog</span> (subir manual 9h)</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">LO / TG / JV / PB</td></tr>
-          <tr><td class="td-date">28 MAR</td><td><span class="fmt fmt-portada">Portada</span></td><td class="td-left">Portada Reel — Guajaca 50 Parte 2 (2da versión)</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">JV</td></tr>
-          <tr><td class="td-date">28 MAR</td><td><span class="fmt fmt-reel">Reel</span></td><td class="td-left">Reel — Guajaca 50 Parte 2 (Serie) <span class="prop prop-gua">Guajaca 50</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / PB / JQ</td></tr>
-          <tr><td class="td-date">30 MAR</td><td><span class="fmt fmt-hist">Historia</span></td><td class="td-left">Historia — Elena Rusinova de Brodovsky <span class="prop prop-gen">Testimonio</span> (subir manual 20h)</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">PB / TG / JQ</td></tr>
-        </tbody>
-      </table>
-    </div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Fecha</th><th>Formato</th><th class="tl">Pieza / Propiedad</th><th>Estado</th><th>Equipo</th></tr></thead>
+      <tbody>
+        <tr><td class="td-date">1 MAR</td><td><span class="fmt fmt-portada">Portada</span></td><td class="td-left">Portada Reel — Aquamarina</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">JV</td></tr>
+        <tr><td class="td-date">1 MAR</td><td><span class="fmt fmt-reel">Reel</span></td><td class="td-left">Reel — Aquamarina <span class="prop prop-aq">Aquamarina</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / PB / JQ</td></tr>
+        <tr><td class="td-date">2 MAR</td><td><span class="fmt fmt-hist">Historia</span></td><td class="td-left">Historia — Negocios (Web) <span class="prop prop-gen">General</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / PB</td></tr>
+        <tr><td class="td-date">4 MAR</td><td><span class="fmt fmt-portada">Portada</span></td><td class="td-left">Portada Reel — Dezenove</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">JV</td></tr>
+        <tr><td class="td-date">4 MAR</td><td><span class="fmt fmt-reel">Reel</span></td><td class="td-left">Reel — Dezenove <span class="prop prop-dez">Dezenove</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">PB / TG / JQ</td></tr>
+        <tr><td class="td-date">6 MAR</td><td><span class="fmt fmt-carru">Carrusel</span></td><td class="td-left">Carrusel — Educativo / Inversión <span class="prop prop-gen">General</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / PB</td></tr>
+        <tr><td class="td-date">8 MAR</td><td><span class="fmt fmt-post">Post</span></td><td class="td-left">Post — Día Internacional de la Mujer <span class="prop prop-gen">General</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / PB</td></tr>
+        <tr><td class="td-date">9 MAR</td><td><span class="fmt fmt-hist">Historia</span></td><td class="td-left">Historia — Dezenove <span class="prop prop-dez">Dezenove</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">JV / PB / TG</td></tr>
+        <tr><td class="td-date">10 MAR</td><td><span class="fmt fmt-carru">Carrusel</span></td><td class="td-left">Carrusel — Educativo inversión <span class="prop prop-gen">General</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / PB</td></tr>
+        <tr><td class="td-date">12 MAR</td><td><span class="fmt fmt-portada">Portada</span></td><td class="td-left">Portada Reel — Vista Alta A101</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">JV</td></tr>
+        <tr><td class="td-date">12 MAR</td><td><span class="fmt fmt-reel">Reel</span></td><td class="td-left">Reel — Vista Alta A101 <span class="prop prop-vista">Vista Alta</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / PB / JQ</td></tr>
+        <tr><td class="td-date">14 MAR</td><td><span class="fmt fmt-hist">Historia</span></td><td class="td-left">Historia — Contenido semanal <span class="prop prop-gen">General</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / PB</td></tr>
+        <tr><td class="td-date">16 MAR</td><td><span class="fmt fmt-hist">Historia</span></td><td class="td-left">Historia / Video — Jarabacoa <span class="prop prop-gen">Jarabacoa</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / PB / JQ</td></tr>
+        <tr><td class="td-date">17 MAR</td><td><span class="fmt fmt-post">Post</span></td><td class="td-left">Post — Contenido orgánico <span class="prop prop-gen">General</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / PB</td></tr>
+        <tr><td class="td-date">18 MAR</td><td><span class="fmt fmt-carru">Carrusel</span></td><td class="td-left">Carrusel — Educativo <span class="prop prop-gen">General</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / PB / JV</td></tr>
+        <tr><td class="td-date">20 MAR</td><td><span class="fmt fmt-post">Post</span></td><td class="td-left">Post — Contenido orgánico <span class="prop prop-gen">General</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">JV / PB / TG</td></tr>
+        <tr><td class="td-date">22 MAR</td><td><span class="fmt fmt-portada">Portada</span></td><td class="td-left">Portada Reel — Guajaca 50 Parte 2</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">JV / PB</td></tr>
+        <tr><td class="td-date">22 MAR</td><td><span class="fmt fmt-reel">Reel</span></td><td class="td-left">Reel — Guajaca 50 Parte 2 <span class="prop prop-gua">Guajaca 50</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">PB / TG / JQ</td></tr>
+        <tr><td class="td-date">25 MAR</td><td><span class="fmt fmt-hist">Historia</span></td><td class="td-left">Historia — Aquamarina 12-24B <span class="prop prop-aq">Aquamarina</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">PB / JV / TG</td></tr>
+        <tr><td class="td-date">26 MAR</td><td><span class="fmt fmt-post">Post</span></td><td class="td-left">Post Blog — Segmento de blog <span class="prop prop-blog">Blog</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">LO / PB / JV / TG</td></tr>
+        <tr><td class="td-date">27 MAR</td><td><span class="fmt fmt-hist">Historia</span></td><td class="td-left">Historia Blog — Invertir en lujo en RD <span class="prop prop-blog">Blog</span> (manual 9h)</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">LO / TG / JV / PB</td></tr>
+        <tr><td class="td-date">28 MAR</td><td><span class="fmt fmt-portada">Portada</span></td><td class="td-left">Portada Reel — Guajaca 50 (v2)</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">JV</td></tr>
+        <tr><td class="td-date">28 MAR</td><td><span class="fmt fmt-reel">Reel</span></td><td class="td-left">Reel — Guajaca 50 Serie <span class="prop prop-gua">Guajaca 50</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / PB / JQ</td></tr>
+        <tr><td class="td-date">30 MAR</td><td><span class="fmt fmt-hist">Historia</span></td><td class="td-left">Historia — Testimonio Elena Rusinova <span class="prop prop-gen">Testimonio</span> (manual 20h)</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">PB / TG / JQ</td></tr>
+      </tbody>
+    </table></div>
     <p class="note">TG = Teresita Gil · JV = Jesus Villalba · PB = Priscila Bravo · JQ = Juan Quintero · LO = Luciana Opoka</p>
   </div>
 </section>
@@ -194,243 +202,182 @@ tbody td{padding:11px 14px;vertical-align:middle;color:var(--black);line-height:
 <!-- SECCIÓN 2: MAIL MARKETING -->
 <section class="section">
   <div class="container">
-    <div class="section-header"><div class="section-accent"></div><div class="section-title-block"><span class="section-num">02</span><span class="section-title">Mail Marketing — Campaña Brevo Marzo 2026</span></div></div>
-    <p class="desc">Arichy Real Estate mantiene una <strong>campaña de email marketing activa y numerada</strong> enviada vía Brevo. En marzo se enviaron 3 correos de la secuencia, incluyendo un <strong>mail extra urgente</strong> de comunicado de Semana Santa. La estrategia de mails combina curaduría de mercado, showcase de propiedades y contenido educativo para inversores.</p>
+    <div class="section-header"><div class="section-accent"></div><div class="section-title-block"><span class="section-num">02</span><span class="section-title">Mail Marketing — Secuencia Brevo · Marzo 2026</span></div></div>
+    <p class="desc">Se enviaron <strong>3 correos de la secuencia activa</strong> (#5, #6, #7) más un comunicado extra de Semana Santa. La cadencia semanal posiciona a Arichy como referente constante para inversores de lujo.</p>
     <div class="kpi-grid kpi-grid-4">
-      <div class="kpi-card"><div class="kpi-val">3</div><div class="kpi-lbl">Mails enviados en marzo</div></div>
-      <div class="kpi-card"><div class="kpi-val">#5→#7</div><div class="kpi-lbl">Secuencia activa</div></div>
+      <div class="kpi-card"><div class="kpi-val">4</div><div class="kpi-lbl">Mails enviados</div></div>
+      <div class="kpi-card"><div class="kpi-val">#5–#7</div><div class="kpi-lbl">Secuencia activa</div></div>
       <div class="kpi-card"><div class="kpi-val">1</div><div class="kpi-lbl">Mail extra urgente</div></div>
       <div class="kpi-card"><div class="kpi-val">Brevo</div><div class="kpi-lbl">Plataforma de envío</div></div>
     </div>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th style="width:50px">#</th><th>Fecha</th><th class="tl">Asunto / Temática</th><th>Tipo</th><th>Estado</th><th>Equipo</th></tr></thead>
-        <tbody>
-          <tr>
-            <td class="td-bold">#5</td>
-            <td class="td-date">6 MAR</td>
-            <td class="td-left">Estructura y protección de la inversión (curaduría + análisis)</td>
-            <td><span class="fmt fmt-mail">Secuencia</span></td>
-            <td><span class="pill pill-pub">Publicado</span></td>
-            <td class="td-gray">JV / PB / Cesar D.</td>
-          </tr>
-          <tr>
-            <td class="td-bold">#6</td>
-            <td class="td-date">13 MAR</td>
-            <td class="td-left">Contenido educativo inversores — #6 MAIL</td>
-            <td><span class="fmt fmt-mail">Secuencia</span></td>
-            <td><span class="pill pill-pub">Publicado</span></td>
-            <td class="td-gray">PB / AC / TG / JV</td>
-          </tr>
-          <tr>
-            <td class="td-bold">#7</td>
-            <td class="td-date">19 MAR</td>
-            <td class="td-left">Contenido educativo inversores — #7 MAIL</td>
-            <td><span class="fmt fmt-mail">Secuencia</span></td>
-            <td><span class="pill pill-pub">Publicado</span></td>
-            <td class="td-gray">PB / AC / TG / JV</td>
-          </tr>
-          <tr>
-            <td class="td-bold">EXTRA</td>
-            <td class="td-date">31 MAR</td>
-            <td class="td-left">Comunicado especial — Semana Santa</td>
-            <td><span class="fmt fmt-est">Extra</span></td>
-            <td><span class="pill pill-pub">Publicado</span></td>
-            <td class="td-gray">JV / TG / AC / Cesar D. / PB</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="note">AC = Adrián Cano · Cesar D. = Cesar Díaz (configuración y envío técnico Brevo)</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th style="width:50px">#</th><th>Fecha</th><th class="tl">Asunto / Temática</th><th>Tipo</th><th>Estado</th><th>Equipo</th></tr></thead>
+      <tbody>
+        <tr><td class="td-bold">#5</td><td class="td-date">6 MAR</td><td class="td-left">Estructura y protección de la inversión (curaduría + análisis)</td><td><span class="fmt fmt-mail">Secuencia</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">JV / PB / Cesar D.</td></tr>
+        <tr><td class="td-bold">#6</td><td class="td-date">13 MAR</td><td class="td-left">Contenido educativo inversores</td><td><span class="fmt fmt-mail">Secuencia</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">PB / AC / TG / JV</td></tr>
+        <tr><td class="td-bold">#7</td><td class="td-date">19 MAR</td><td class="td-left">Contenido educativo inversores</td><td><span class="fmt fmt-mail">Secuencia</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">PB / AC / TG / JV</td></tr>
+        <tr><td class="td-bold" style="color:#2563EB">EXTRA</td><td class="td-date">31 MAR</td><td class="td-left">Comunicado especial — Semana Santa</td><td><span class="fmt fmt-est">Extra</span></td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">JV / TG / AC / Cesar D. / PB</td></tr>
+      </tbody>
+    </table></div>
   </div>
 </section>
 
-<!-- SECCIÓN 3: TAREAS ESTRATÉGICAS -->
+<!-- SECCIÓN 3: META ADS — DATOS API -->
 <section class="section" style="background:white;padding-top:56px">
   <div class="container">
-    <div class="section-header"><div class="section-accent"></div><div class="section-title-block"><span class="section-num">03</span><span class="section-title">Tareas Estratégicas y Entregables Especiales</span></div></div>
-    <p class="desc">Además del contenido diario y los mails, se gestionaron tareas de producción de guiones, planificación editorial y logística de recursos del equipo.</p>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th class="tl">Tarea / Entregable</th><th class="tl">Descripción</th><th>Estado</th><th>Responsable</th></tr></thead>
-        <tbody>
-          <tr>
-            <td class="td-left td-bold">Recursos y Logística (Mar/Abr)</td>
-            <td class="td-left">Planificación de recursos humanos, materiales y logística de producción para los meses de marzo y abril. Coordinación interna del equipo.</td>
-            <td><span class="pill pill-pub">Publicado</span></td>
-            <td class="td-gray">PB / TG</td>
-          </tr>
-          <tr>
-            <td class="td-left td-bold">Ajustes base de mails</td>
-            <td class="td-left">Actualización técnica de la base de datos de contactos en Brevo. Limpieza y segmentación de listas para mejorar deliverability.</td>
-            <td><span class="pill pill-pub">Publicado</span></td>
-            <td class="td-gray">Cesar Díaz / PB</td>
-          </tr>
-          <tr>
-            <td class="td-left td-bold">Ajuste cuerpo del mail — bloque propiedad destacada (x3)</td>
-            <td class="td-left">Optimización del template de email: inclusión de bloque visual de propiedad destacada en 3 plantillas distintas de la secuencia.</td>
-            <td><span class="pill pill-pub">Publicado</span></td>
-            <td class="td-gray">Teresita G.</td>
-          </tr>
-          <tr>
-            <td class="td-left td-bold">Roadmap: Grilla / Mail Marketing</td>
-            <td class="td-left">Planificación editorial completa del siguiente periodo. Estructura de contenidos redes + secuencia de mails coordinada.</td>
-            <td><span class="pill pill-abi">Abierta</span></td>
-            <td class="td-gray">Teresita G.</td>
-          </tr>
-          <tr>
-            <td class="td-left td-bold">Roadmap: Podcast / Webinar</td>
-            <td class="td-left">Planificación de formato podcast o webinar para Arichy Real Estate como canal de autoridad para inversores de lujo.</td>
-            <td><span class="pill pill-abi">Abierta</span></td>
-            <td class="td-gray">Teresita G.</td>
-          </tr>
-          <tr>
-            <td class="td-left td-bold">Roadmap: Historias Destacadas IG</td>
-            <td class="td-left">Planificación y diseño de las categorías de Historias Destacadas: Stay, Exclusives, Services, Legal Guide, Blog, Insights/Events, Our Team.</td>
-            <td><span class="pill pill-abi">Abierta</span></td>
-            <td class="td-gray">TG / PB</td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="section-header">
+      <div class="section-accent" style="background:#3B82F6"></div>
+      <div class="section-title-block">
+        <span class="section-num">03</span>
+        <span class="section-title">Meta Ads — Campaña Arichy Real Estate</span>
+        <span class="meta-badge">● Datos vía API en tiempo real</span>
+      </div>
+    </div>
+    <p class="desc">Datos de campañas obtenidos directamente de <strong>Meta Ads API</strong> (Graph API v19.0) para la cuenta publicitaria de Arichy Real Estate. Período: <strong>17 Mar – 15 Abr 2026</strong> (ventana activa de la campaña al momento de consulta).</p>
+
+    <div class="kpi-grid kpi-grid-6">
+      <div class="kpi-card meta-card"><div class="kpi-val">$112.13</div><div class="kpi-lbl">Gasto total (USD)</div></div>
+      <div class="kpi-card meta-card"><div class="kpi-val">126,290</div><div class="kpi-lbl">Impresiones</div></div>
+      <div class="kpi-card meta-card"><div class="kpi-val">70,904</div><div class="kpi-lbl">Alcance</div></div>
+      <div class="kpi-card meta-card"><div class="kpi-val">2,675</div><div class="kpi-lbl">Clicks totales</div></div>
+      <div class="kpi-card meta-card"><div class="kpi-val">$0.04</div><div class="kpi-lbl">CPC (USD)</div></div>
+      <div class="kpi-card meta-card"><div class="kpi-val">1.78x</div><div class="kpi-lbl">Frecuencia</div></div>
     </div>
 
-    <div class="section-sub">Historias Destacadas IG — Categorías planificadas</div>
-    <p class="desc" style="margin-bottom:16px">Se definieron <strong>7 categorías</strong> para las Historias Destacadas de Instagram, listas para producción en abril:</p>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th class="tl">Categoría</th><th class="tl">Descripción del contenido</th><th>Estado</th></tr></thead>
-        <tbody>
-          <tr><td class="td-left td-bold">Stay</td><td class="td-left">Contenido de propiedades disponibles para estadía / renta</td><td><span class="pill pill-abi">Abierta</span></td></tr>
-          <tr><td class="td-left td-bold">Exclusives</td><td class="td-left">Propiedades exclusivas de Arichy — listados premium</td><td><span class="pill pill-abi">Abierta</span></td></tr>
-          <tr><td class="td-left td-bold">Services</td><td class="td-left">Servicios que ofrece la agencia: asesoría, acompañamiento, gestión</td><td><span class="pill pill-abi">Abierta</span></td></tr>
-          <tr><td class="td-left td-bold">Legal Guide</td><td class="td-left">Guía legal para extranjeros que invierten en RD</td><td><span class="pill pill-abi">Abierta</span></td></tr>
-          <tr><td class="td-left td-bold">Blog</td><td class="td-left">Artículos del blog web sobre inversión inmobiliaria en RD</td><td><span class="pill pill-abi">Abierta</span></td></tr>
-          <tr><td class="td-left td-bold">Insights / Events</td><td class="td-left">Tendencias de mercado, noticias del sector y eventos</td><td><span class="pill pill-abi">Abierta</span></td></tr>
-          <tr><td class="td-left td-bold">Our Team</td><td class="td-left">Presentación del equipo Arichy — confianza y autoridad</td><td><span class="pill pill-abi">Abierta</span></td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
+    <div class="section-sub">Detalle de campañas activas</div>
+    <div class="table-wrap"><table>
+      <thead class="meta-head"><tr>
+        <th class="tl">Campaña</th><th>Estado</th><th>Objetivo</th><th>Gasto (USD)</th><th>Impresiones</th><th>Alcance</th><th>Clicks</th><th>CPC</th><th>CPM</th><th>Frecuencia</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td class="td-left td-bold">Interacción con perfil</td>
+          <td><span class="pill pill-activa">Activa</span></td>
+          <td class="td-gray" style="font-size:12px">Tráfico</td>
+          <td class="td-blue td-bold">$112.13</td>
+          <td class="td-bold">126,290</td>
+          <td>70,904</td>
+          <td class="td-bold">2,675</td>
+          <td class="td-green">$0.042</td>
+          <td>$0.89</td>
+          <td>1.78x</td>
+        </tr>
+        <tr>
+          <td class="td-left" style="color:var(--gray3)">Tráfico — MVIP</td>
+          <td><span class="pill pill-pausa">Pausada</span></td>
+          <td class="td-gray" style="font-size:12px">Tráfico</td>
+          <td colspan="7" class="td-gray" style="text-align:left;padding-left:14px">Sin datos en el período — campaña pausada</td>
+        </tr>
+      </tbody>
+    </table></div>
 
-<!-- SECCIÓN 4: ANÁLISIS -->
-<section class="section">
-  <div class="container">
-    <div class="section-header"><div class="section-accent"></div><div class="section-title-block"><span class="section-num">04</span><span class="section-title">Análisis de Gestión — Marzo 2026</span></div></div>
+    <div class="section-sub">Acciones generadas por la campaña activa</div>
+    <div class="table-wrap"><table>
+      <thead class="meta-head"><tr><th class="tl">Tipo de acción</th><th>Cantidad</th><th>Costo por acción</th><th>Descripción</th></tr></thead>
+      <tbody>
+        <tr><td class="td-left td-bold">Link Click</td><td class="td-big">2,574</td><td class="td-green">$0.044</td><td class="td-gray td-left">Clicks a destino del anuncio (web/perfil)</td></tr>
+        <tr><td class="td-left td-bold">Video Views</td><td class="td-big">6,707</td><td class="td-green">$0.017</td><td class="td-gray td-left">Reproducciones de video en el feed</td></tr>
+        <tr><td class="td-left td-bold">Page Engagement</td><td class="td-big">9,490</td><td class="td-green">$0.012</td><td class="td-gray td-left">Interacciones totales con la página</td></tr>
+        <tr><td class="td-left td-bold">Post Reactions</td><td class="td-big">178</td><td>—</td><td class="td-gray td-left">Reacciones a publicaciones del anuncio</td></tr>
+        <tr><td class="td-left td-bold">Post Saves</td><td class="td-big">7</td><td>—</td><td class="td-gray td-left">Guardados del post por usuarios</td></tr>
+        <tr><td class="td-left td-bold">Nuevos Likes (netos)</td><td class="td-big">152</td><td class="td-green">—</td><td class="td-gray td-left">Seguidores nuevos netos generados</td></tr>
+        <tr><td class="td-left td-bold">Comentarios</td><td class="td-big">13</td><td>—</td><td class="td-gray td-left">Comentarios en publicaciones del anuncio</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="section-sub">Análisis de rendimiento</div>
     <div class="analysis-grid">
-      <div class="analysis-block">
-        <div class="analysis-title">🏡 Estrategia por propiedad</div>
-        <div class="analysis-text">Marzo cubrió <strong>5 propiedades distintas</strong>: Aquamarina, Dezenove, Vista Alta A101, Guajaca 50 (Serie en 2 partes) y Jarabacoa. Cada propiedad tuvo su Reel con portada personalizada, manteniendo coherencia visual por proyecto.</div>
+      <div class="analysis-block meta-block">
+        <div class="analysis-title">💡 CPC excepcionalmente bajo</div>
+        <div class="analysis-text">Con un CPC de <strong>$0.042 USD</strong>, Arichy está muy por debajo del benchmark para Real Estate de lujo ($1.50–$3.50 USD por click). Esto indica creatividades de muy alta relevancia para la audiencia objetivo.</div>
       </div>
-      <div class="analysis-block">
-        <div class="analysis-title">📧 Mail marketing activo y consistente</div>
-        <div class="analysis-text">Se mantiene la secuencia numerada de mails con <strong>3 envíos regulares (#5, #6, #7)</strong> más 1 comunicado extra de Semana Santa. La cadencia semanal de mails posiciona a Arichy como referente constante para los inversores de la base de datos.</div>
+      <div class="analysis-block meta-block">
+        <div class="analysis-title">📊 6,707 reproducciones de video</div>
+        <div class="analysis-text">Los Reels de propiedades están funcionando como creatividades de alto engagement. <strong>$0.017 por reproducción</strong> es un costo extraordinario — el video de propiedad resuena directamente con inversores potenciales.</div>
       </div>
-      <div class="analysis-block">
-        <div class="analysis-title">📝 Blog integrado al contenido social</div>
-        <div class="analysis-text">El artículo sobre <strong>inversión en bienes raíces de lujo en RD</strong> fue distribuido tanto como Historia (subida manual) como Post en feed. Esta integración blog-redes maximiza el alcance del contenido de autoridad producido por Luciana Opoka.</div>
+      <div class="analysis-block meta-block">
+        <div class="analysis-title">👥 70,904 personas alcanzadas</div>
+        <div class="analysis-text">Con <strong>frecuencia de 1.78x</strong> y alcance de 70K personas, la campaña tiene escala significativa para el segmento de lujo. La frecuencia es saludable: suficiente para reconocimiento sin saturar.</div>
       </div>
-      <div class="analysis-block">
-        <div class="analysis-title">🎬 Serie documental Guajaca 50</div>
-        <div class="analysis-text">El proyecto Guajaca 50 tuvo <strong>dos entregas en marzo</strong> (Parte 2 en dos fechas distintas), estableciendo un formato de serie que genera expectativa y retención de audiencia entre publicaciones.</div>
+      <div class="analysis-block meta-block">
+        <div class="analysis-title">🔥 9,490 interacciones totales</div>
+        <div class="analysis-text">El nivel de page engagement es muy alto en relación al gasto. <strong>152 nuevos likes netos</strong> representan crecimiento real de audiencia orgánica, más allá de los clicks directos al destino.</div>
       </div>
-      <div class="analysis-block">
-        <div class="analysis-title">👥 Testimonio de cliente</div>
-        <div class="analysis-text">Se publicó contenido testimonial de <strong>Elena Rusinova de Brodovsky</strong> como Historia, aportando prueba social de alto valor para una audiencia de inversores exigentes. Este tipo de contenido refuerza la credibilidad de la marca.</div>
+      <div class="analysis-block meta-block">
+        <div class="analysis-title">💰 Oportunidad de escala</div>
+        <div class="analysis-text">Con CPCs tan bajos, <strong>aumentar el presupuesto a $5–$10 USD/día</strong> podría multiplicar resultados sin degradar eficiencia. El algoritmo tiene data suficiente para optimizar más agresivamente.</div>
       </div>
-      <div class="analysis-block">
-        <div class="analysis-title">🗓️ Planificación adelantada</div>
-        <div class="analysis-text">Durante marzo se dejaron trazados los <strong>Roadmaps de Grilla/Mail, Podcast/Webinar e Historias Destacadas</strong>, además del mail #8 (ya aprobado para 26 marzo) y guiones de Reels ajustados el 10 de abril para el siguiente ciclo.</div>
+      <div class="analysis-block meta-block">
+        <div class="analysis-title">⏸️ Campaña "Tráfico MVIP" pausada</div>
+        <div class="analysis-text">La segunda campaña de la cuenta está pausada y sin datos en el período. Se recomienda evaluar si se reactiva con nuevas creatividades o se consolida el presupuesto en la campaña activa.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SECCIÓN 5: CONSOLIDADO -->
-<section class="section" style="background:white;padding-top:56px">
-  <div class="container">
-    <div class="section-header"><div class="section-accent"></div><div class="section-title-block"><span class="section-num">05</span><span class="section-title">Consolidado de Estados — Todas las Tareas</span></div></div>
-    <p class="desc">Listado completo de los <strong>30 entregables gestionados</strong> en marzo 2026 para Arichy Real Estate.</p>
-    <div class="kpi-grid kpi-grid-4" style="margin-bottom:28px">
-      <div class="kpi-card"><div class="kpi-val">27</div><div class="kpi-lbl">Publicado</div></div>
-      <div class="kpi-card"><div class="kpi-val">2</div><div class="kpi-lbl">Aprobado</div></div>
-      <div class="kpi-card"><div class="kpi-val">1</div><div class="kpi-lbl">Abierta (en planif.)</div></div>
-      <div class="kpi-card"><div class="kpi-val">100%</div><div class="kpi-lbl">Tasa de entrega</div></div>
-    </div>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Fecha</th><th>Formato</th><th class="tl">Tarea / Entregable</th><th>Estado</th><th>Responsable</th></tr></thead>
-        <tbody>
-          <tr><td class="td-date">1 MAR</td><td><span class="fmt fmt-portada">Portada</span></td><td class="td-left">Portada Reel — Aquamarina</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">JV</td></tr>
-          <tr><td class="td-date">1 MAR</td><td><span class="fmt fmt-reel">Reel</span></td><td class="td-left">Reel — Aquamarina</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / PB / JQ</td></tr>
-          <tr><td class="td-date">2 MAR</td><td><span class="fmt fmt-hist">Historia</span></td><td class="td-left">Historia — Negocios (Web)</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / PB</td></tr>
-          <tr><td class="td-date">4 MAR</td><td><span class="fmt fmt-portada">Portada</span></td><td class="td-left">Portada Reel — Dezenove</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">JV</td></tr>
-          <tr><td class="td-date">4 MAR</td><td><span class="fmt fmt-reel">Reel</span></td><td class="td-left">Reel — Dezenove</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">PB / TG / JQ</td></tr>
-          <tr><td class="td-date">6 MAR</td><td><span class="fmt fmt-mail">Mail #5</span></td><td class="td-left">Mail #5 — Estructura y protección de la inversión</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">JV / PB / Cesar D.</td></tr>
-          <tr><td class="td-date">6 MAR</td><td><span class="fmt fmt-carru">Carrusel</span></td><td class="td-left">Carrusel — Educativo</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / PB</td></tr>
-          <tr><td class="td-date">8 MAR</td><td><span class="fmt fmt-post">Post</span></td><td class="td-left">Post — Día Internacional de la Mujer</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / PB</td></tr>
-          <tr><td class="td-date">9 MAR</td><td><span class="fmt fmt-hist">Historia</span></td><td class="td-left">Historia — Dezenove</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">JV / PB / TG</td></tr>
-          <tr><td class="td-date">10 MAR</td><td><span class="fmt fmt-carru">Carrusel</span></td><td class="td-left">Carrusel — Educativo inversión</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / PB</td></tr>
-          <tr><td class="td-date">12 MAR</td><td><span class="fmt fmt-portada">Portada</span></td><td class="td-left">Portada Reel — Vista Alta A101</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">JV</td></tr>
-          <tr><td class="td-date">12 MAR</td><td><span class="fmt fmt-reel">Reel</span></td><td class="td-left">Reel — Vista Alta A101</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / PB / JQ</td></tr>
-          <tr><td class="td-date">13 MAR</td><td><span class="fmt fmt-mail">Mail #6</span></td><td class="td-left">Mail #6 — Contenido educativo</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">PB / AC / TG / JV</td></tr>
-          <tr><td class="td-date">14 MAR</td><td><span class="fmt fmt-hist">Historia</span></td><td class="td-left">Historia — Contenido semanal</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / PB</td></tr>
-          <tr><td class="td-date">16 MAR</td><td><span class="fmt fmt-hist">Historia</span></td><td class="td-left">Historia / Video — Jarabacoa</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / PB / JQ</td></tr>
-          <tr><td class="td-date">17 MAR</td><td><span class="fmt fmt-post">Post</span></td><td class="td-left">Post — Contenido orgánico</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / JV / PB</td></tr>
-          <tr><td class="td-date">18 MAR</td><td><span class="fmt fmt-carru">Carrusel</span></td><td class="td-left">Carrusel — Educativo</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / PB / JV</td></tr>
-          <tr><td class="td-date">19 MAR</td><td><span class="fmt fmt-mail">Mail #7</span></td><td class="td-left">Mail #7 — Contenido educativo</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">PB / AC / TG / JV</td></tr>
-          <tr><td class="td-date">20 MAR</td><td><span class="fmt fmt-post">Post</span></td><td class="td-left">Post — Contenido orgánico</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">JV / PB / TG</td></tr>
-          <tr><td class="td-date">22 MAR</td><td><span class="fmt fmt-portada">Portada</span></td><td class="td-left">Portada Reel — Guajaca 50 Parte 2</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">JV / PB</td></tr>
-          <tr><td class="td-date">22 MAR</td><td><span class="fmt fmt-reel">Reel</span></td><td class="td-left">Reel — Guajaca 50 Parte 2 (Serie)</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">PB / TG / JQ</td></tr>
-          <tr><td class="td-date">25 MAR</td><td><span class="fmt fmt-hist">Historia</span></td><td class="td-left">Historia — Aquamarina 12-24B</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">PB / JV / TG</td></tr>
-          <tr><td class="td-date">26 MAR</td><td><span class="fmt fmt-post">Post</span></td><td class="td-left">Post Blog — Promocionar segmento de blog</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">LO / PB / JV / TG</td></tr>
-          <tr><td class="td-date">27 MAR</td><td><span class="fmt fmt-hist">Historia</span></td><td class="td-left">Historia Blog — Invertir en lujo RD (manual 9h)</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">LO / TG / JV / PB</td></tr>
-          <tr><td class="td-date">28 MAR</td><td><span class="fmt fmt-portada">Portada</span></td><td class="td-left">Portada Reel — Guajaca 50 Parte 2 (v2)</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">JV</td></tr>
-          <tr><td class="td-date">28 MAR</td><td><span class="fmt fmt-reel">Reel</span></td><td class="td-left">Reel — Guajaca 50 Parte 2 (v2)</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / PB / JQ</td></tr>
-          <tr><td class="td-date">30 MAR</td><td><span class="fmt fmt-hist">Historia</span></td><td class="td-left">Historia — Testimonio Elena Rusinova (manual 20h)</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">PB / TG / JQ</td></tr>
-          <tr><td class="td-date">31 MAR</td><td><span class="fmt fmt-mail">Mail Extra</span></td><td class="td-left">Mail Extra — Comunicado Semana Santa</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">JV / TG / AC / Cesar D. / PB</td></tr>
-          <tr><td class="td-date">Marzo</td><td><span class="fmt fmt-est">Estrategia</span></td><td class="td-left">Ajuste base de mails + templates Brevo (x3)</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">TG / Cesar D. / PB</td></tr>
-          <tr><td class="td-date">Marzo</td><td><span class="fmt fmt-est">Estrategia</span></td><td class="td-left">Roadmaps: Grilla, Mail, Podcast, Historias Destacadas</td><td><span class="pill pill-abi">En planif.</span></td><td class="td-gray">TG / PB</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="note">TG = Teresita Gil · JV = Jesus Villalba · PB = Priscila Bravo · JQ = Juan Quintero · LO = Luciana Opoka · AC = Adrián Cano · Cesar D. = Cesar Díaz</p>
-  </div>
-</section>
-
-<!-- SECCIÓN 6: PRÓXIMOS PASOS -->
+<!-- SECCIÓN 4: TAREAS ESTRATÉGICAS -->
 <section class="section">
   <div class="container">
-    <div class="section-header"><div class="section-accent"></div><div class="section-title-block"><span class="section-num">06</span><span class="section-title">Próximos Pasos — Abril 2026</span></div></div>
+    <div class="section-header"><div class="section-accent"></div><div class="section-title-block"><span class="section-num">04</span><span class="section-title">Tareas Estratégicas y Entregables Especiales</span></div></div>
+    <div class="table-wrap"><table>
+      <thead><tr><th class="tl">Tarea / Entregable</th><th class="tl">Descripción</th><th>Estado</th><th>Responsable</th></tr></thead>
+      <tbody>
+        <tr><td class="td-left td-bold">Recursos y Logística (Mar/Abr)</td><td class="td-left">Planificación de recursos humanos y logística de producción para marzo–abril.</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">PB / TG</td></tr>
+        <tr><td class="td-left td-bold">Ajuste base de mails (Brevo)</td><td class="td-left">Limpieza y segmentación de listas de contactos en Brevo para mejorar deliverability.</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">Cesar D. / PB</td></tr>
+        <tr><td class="td-left td-bold">Ajuste cuerpo del mail (x3 plantillas)</td><td class="td-left">Optimización de templates con bloque visual de propiedad destacada en 3 plantillas.</td><td><span class="pill pill-pub">Publicado</span></td><td class="td-gray">Teresita G.</td></tr>
+        <tr><td class="td-left td-bold">Roadmap: Historias Destacadas IG</td><td class="td-left">Planificación de 7 categorías: Stay, Exclusives, Services, Legal Guide, Blog, Insights/Events, Our Team.</td><td><span class="pill pill-abi">En planif.</span></td><td class="td-gray">TG / PB</td></tr>
+        <tr><td class="td-left td-bold">Roadmap: Grilla / Mail Marketing</td><td class="td-left">Planificación editorial del siguiente período con estructura de mails coordinada.</td><td><span class="pill pill-abi">En planif.</span></td><td class="td-gray">Teresita G.</td></tr>
+        <tr><td class="td-left td-bold">Roadmap: Podcast / Webinar</td><td class="td-left">Planificación de formato de autoridad para inversores de lujo como canal premium.</td><td><span class="pill pill-abi">En planif.</span></td><td class="td-gray">Teresita G.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<!-- SECCIÓN 5: PRÓXIMOS PASOS -->
+<section class="section" style="background:white;padding-top:56px">
+  <div class="container">
+    <div class="section-header"><div class="section-accent"></div><div class="section-title-block"><span class="section-num">05</span><span class="section-title">Próximos Pasos — Abril 2026</span></div></div>
+
     <div class="next-section">
       <div class="next-header"><span style="font-size:18px">📱</span><span class="next-header-title">Social Media & Contenidos</span></div>
       <div class="next-items">
-        <div class="next-item"><div class="next-num">1</div><div class="next-text">Publicar grilla de abril: Reels de Villa Cocotal Golf (24 ABR), carruseles, posts e historias ya planificados</div></div>
-        <div class="next-item"><div class="next-num">2</div><div class="next-text">Ejecutar los 3 Reels de guiones ajustados el 10 de abril (Reel 1, 2 y 3 ya en producción)</div></div>
-        <div class="next-item"><div class="next-num">3</div><div class="next-text">Publicar Historia de Blog del 22 de abril (subida manual 8–10h) coordinada con Luciana Opoka</div></div>
-        <div class="next-item"><div class="next-num">4</div><div class="next-text">Diseñar y publicar las 7 categorías de Historias Destacadas en Instagram (Stay, Exclusives, Services, Legal Guide, Blog, Insights, Our Team)</div></div>
-        <div class="next-item"><div class="next-num">5</div><div class="next-text">Desarrollar la grilla 25 Abril – 9 Mayo ya marcada como pendiente en ClickUp</div></div>
+        <div class="next-item"><div class="next-num">1</div><div class="next-text">Publicar grilla de abril: Reel Villa Cocotal Golf (24 ABR), 3 Reels de guiones ajustados (10 ABR), Historias y Carruseles planificados</div></div>
+        <div class="next-item"><div class="next-num">2</div><div class="next-text">Diseñar y lanzar las 7 categorías de Historias Destacadas en Instagram (Stay, Exclusives, Services, Legal Guide, Blog, Insights, Our Team)</div></div>
+        <div class="next-item"><div class="next-num">3</div><div class="next-text">Publicar Historia de Blog del 22 de abril (manual 8–10h) coordinada con Luciana Opoka</div></div>
+        <div class="next-item"><div class="next-num">4</div><div class="next-text">Coordinar los 2 Reels de colaboración con Anna en Instagram (SEM #1 y SEM #2) — pendiente material de Luciana</div></div>
+        <div class="next-item"><div class="next-num">5</div><div class="next-text">Desarrollar grilla 25 Abril – 9 Mayo ya identificada como pendiente</div></div>
       </div>
     </div>
+
     <div class="next-section">
       <div class="next-header"><span style="font-size:18px">📧</span><span class="next-header-title">Mail Marketing (Brevo)</span></div>
       <div class="next-items">
-        <div class="next-item"><div class="next-num">1</div><div class="next-text">Enviar Mail #8 (26 Marzo — ya aprobado) y ejecutar Mail #9 (20 Abril) y Mail #10 Comercial (10 Abril)</div></div>
-        <div class="next-item"><div class="next-num">2</div><div class="next-text">Actualizar base de datos Brevo (tarea activa asignada a Priscila y Cesar Díaz)</div></div>
-        <div class="next-item"><div class="next-num">3</div><div class="next-text">Evaluar métricas de apertura y clics de los mails #5–#7 para ajustar asuntos y CTAs</div></div>
+        <div class="next-item"><div class="next-num">1</div><div class="next-text">Enviar Mail #8 (ya aprobado), Mail #9 (20 ABR) y Mail #10 Comercial (10 ABR)</div></div>
+        <div class="next-item"><div class="next-num">2</div><div class="next-text">Completar actualización de base de datos Brevo — tarea activa Priscila + Cesar Díaz</div></div>
+        <div class="next-item"><div class="next-num">3</div><div class="next-text">Revisar métricas de apertura y clics de mails #5–#7 para optimizar asuntos y CTAs de los próximos envíos</div></div>
       </div>
     </div>
+
     <div class="next-section">
-      <div class="next-header"><span style="font-size:18px">🎬</span><span class="next-header-title">Producción de Video & Contenido Especial</span></div>
+      <div class="next-header" style="border-left-color:#3B82F6"><span style="font-size:18px">📣</span><span class="next-header-title">Meta Ads</span></div>
       <div class="next-items">
-        <div class="next-item"><div class="next-num">1</div><div class="next-text">Producir video YouTube 8–10 min de Caletón 54 (en lista como tarea extra — Daniel Alva + TG + PB)</div></div>
-        <div class="next-item"><div class="next-num">2</div><div class="next-text">Diseñar portada para Reel 24 Abril (ya aprobada en ClickUp) previo a publicación</div></div>
-        <div class="next-item"><div class="next-num">3</div><div class="next-text">Arrancar planificación del formato Podcast/Webinar — definir temática piloto y invitados</div></div>
-        <div class="next-item"><div class="next-num">4</div><div class="next-text">Coordinar los 2 Reels de Colaboración con Instagram de Anna (SEM #1 y SEM #2) — contenido pendiente por Luciana</div></div>
+        <div class="next-item"><div class="next-num">1</div><div class="next-text">Evaluar aumento de presupuesto de campaña activa: el CPC de $0.042 justifica escalar a $5–$10 USD/día para multiplicar volumen</div></div>
+        <div class="next-item"><div class="next-num">2</div><div class="next-text">Reactivar campaña "Tráfico MVIP" con nuevas creatividades de Reels de propiedades producidos en marzo</div></div>
+        <div class="next-item"><div class="next-num">3</div><div class="next-text">Explorar campaña de retargeting para usuarios que vieron los videos de propiedades (+6,707 reproducciones disponibles como audiencia)</div></div>
+        <div class="next-item"><div class="next-num">4</div><div class="next-text">Revisión mensual de rendimiento en la primera semana de mayo con datos frescos de API</div></div>
       </div>
     </div>
+
+    <div class="next-section">
+      <div class="next-header"><span style="font-size:18px">🎬</span><span class="next-header-title">Video & Producción Especial</span></div>
+      <div class="next-items">
+        <div class="next-item"><div class="next-num">1</div><div class="next-text">Producir video YouTube 8–10 min de Caletón 54 — Daniel Alva + TG + PB coordinados</div></div>
+        <div class="next-item"><div class="next-num">2</div><div class="next-text">Arrancar planificación del formato Podcast/Webinar — definir temática del episodio piloto e invitados</div></div>
+      </div>
+    </div>
+
     <div class="closing">
-      <div class="closing-text">Este informe fue preparado por el equipo de <strong>Marketing VIP®</strong> como parte del servicio mensual de gestión para Arichy Real Estate. Para consultas, aprobaciones o comentarios:</div>
+      <div class="closing-text">Este informe fue preparado por el equipo de <strong>Marketing VIP®</strong> para Arichy Real Estate. Los datos de Meta Ads se obtuvieron directamente vía API para garantizar información en tiempo real. Consultas: </div>
       <a class="closing-link" href="mailto:adrian@marketingvip.co">adrian@marketingvip.co</a>
     </div>
   </div>
@@ -438,7 +385,7 @@ tbody td{padding:11px 14px;vertical-align:middle;color:var(--black);line-height:
 
 </div>
 <footer class="footer-bar">
-  <p>© 2026 Marketing VIP® · Todos los derechos reservados · Informe confidencial</p>
+  <p>© 2026 Marketing VIP® · Datos Meta Ads obtenidos vía Graph API v19.0 · Informe confidencial</p>
   <span>marketingvip.co</span>
 </footer>
 </body>
